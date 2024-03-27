@@ -5,8 +5,8 @@ let searchBarWindow;
 
 function createSearchBarWindow() {
     const { width, height } = screen.getPrimaryDisplay().workAreaSize;
-    const windowWidth = 1600; // Default = 600
-    const windowHeight = 675; // Default = 70
+    const windowWidth = 600; // Default = 600
+    const windowHeight = 70; // Default = 70
     const x = Math.floor((width - windowWidth) / 2);
     const y = Math.floor((height - windowHeight) / 2);
 
@@ -22,7 +22,6 @@ function createSearchBarWindow() {
         alwaysOnTop: false, // Default = true
         resizable: true, // Default = false
         roundedCorners: true, // Default = true
-        backgroundMaterial: 'acrylic', // Set vibrancy to acrylic for Windows
         vibrancy: 'acrylic', // Set vibrancy to acrylic for MacOS
         backgroundColor: '#00000000', // Transparent black
         webPreferences: {
