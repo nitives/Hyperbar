@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/output.css">
+    <title>Hyperbar</title>
+    <script type="module" src="preload.js"></script>
+    <script type="module" src="esc.js"></script>
+    <script type="module" src="config.js"></script>
+    <script type="module" src="openai.js"></script>
+</head>
+<body>
+    <div id="hyper-center">
+        <input class="hyper-input" type="text" id="search-input" placeholder="Ask away...">
+    </div>
+
+    <div id="ai-response"></div>
+
+    <script type="module">
+        // Listen for AI response from main process
+        window.ipcRenderer.on('update-ai-response', (event, response) => {
+            document.getElementById('ai-response').innerText = response;
+        });
+    </script>
+</body>
+</html>

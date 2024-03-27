@@ -1,0 +1,17 @@
+{
+  "name": "hyperbar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "electron": "^29.1.5",
+    "tailwindcss": "^3.4.1"
+  }
+}

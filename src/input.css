@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    transition: ease 300ms;
+}
+
+body {
+  -webkit-app-region: no-drag;
+}
+
+#search-input {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(20, 20, 20, 0);
+    backdrop-filter: blur(10px); /* Apply backdrop filter to the container */
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#search-input:hover {
+    transition: ease 300ms;
+    background-color: rgba(20, 20, 20, 0);
+}
+
+#search-input:focus {
+    transition: ease 300ms;
+    background-color: rgba(20, 20, 20, 0);
+}
+
+/* Input */
+
+input {
+    width: 97vw;
+    height: 100%;
+}
+
+input:focus {
+    outline: rgb(255, 255, 255);
+}
+
+.hyper-input {
+    color: rgb(228, 228, 228);
+}
+
+.hyper-input::placeholder {
+    color: rgb(228, 228, 228);
+}
+
+
+/* ------------ */ 
