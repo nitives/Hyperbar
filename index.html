@@ -1,27 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="hyper-font">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <link rel="stylesheet" href="src/output.css">
     <title>Hyperbar</title>
-    <script type="module" src="preload.js"></script>
-    <script type="module" src="esc.js"></script>
-    <script type="module" src="config.js"></script>
-    <script type="module" src="openai.js"></script>
 </head>
 <body>
-    <div id="hyper-center">
-        <input class="hyper-input" type="text" id="search-input" placeholder="Ask away...">
+    <div class="container-bg flex">
+        <div id="hyper-center" class="hyperbar flex">
+            <input class="hyper-input flex" type="text" id="search-input" placeholder="Ask away...">
+            <div class="aspect-square">
+                <svg class="flex ai-icon" width="53" height="58" viewBox="0 0 53 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_d_32_18)">
+                    <path fill="white" d="M28.1634 42.4707C28.525 42.4707 28.7962 42.208 28.8611 41.8346C29.7016 35.4941 30.5934 34.5308 36.8458 33.834C37.2309 33.7925 37.5 33.5075 37.5 33.1341C37.5 32.7746 37.2351 32.4917 36.8479 32.4439C30.5976 31.7218 29.7311 30.7859 28.8611 24.4358C28.792 24.0624 28.5229 23.8093 28.1634 23.8093C27.8039 23.8093 27.5327 24.0624 27.4774 24.4358C26.6348 30.7859 25.7355 31.7492 19.4906 32.4439C19.0959 32.4854 18.8289 32.7704 18.8289 33.1341C18.8289 33.5054 19.0938 33.7883 19.4885 33.834C25.7217 34.666 26.5668 35.4941 27.4774 41.8346C27.5348 42.208 27.806 42.4707 28.1634 42.4707ZM20.0599 29.4802C20.3015 29.4802 20.477 29.311 20.5047 29.0769C20.9203 25.9733 21.011 25.9627 24.2432 25.3543C24.4656 25.3149 24.6328 25.1511 24.6328 24.9094C24.6328 24.6753 24.4635 24.4998 24.239 24.4742C21.0173 24.0235 20.9106 23.9244 20.5047 20.7612C20.477 20.5154 20.3036 20.3462 20.0599 20.3462C19.8236 20.3462 19.6502 20.5154 19.615 20.7751C19.2421 23.8744 19.0874 23.8733 15.8765 24.4742C15.652 24.5136 15.4849 24.6753 15.4849 24.9094C15.4849 25.1649 15.652 25.3149 15.9276 25.3543C19.1024 25.8573 19.2421 25.9456 19.615 29.0534C19.6502 29.311 19.8236 29.4802 20.0599 29.4802ZM25.7423 21.2933C25.9052 21.2933 26.002 21.1869 26.0276 21.0357C26.3643 19.1457 26.3334 19.0709 28.364 18.7013C28.5173 18.6641 28.6216 18.5715 28.6216 18.4065C28.6216 18.2511 28.5152 18.1468 28.3619 18.1212C26.3334 17.7727 26.3622 17.6937 26.0276 15.789C26.002 15.6357 25.9052 15.5293 25.7423 15.5293C25.5773 15.5293 25.4826 15.6357 25.4571 15.7932C25.1266 17.6769 25.1533 17.7516 23.1206 18.1212C22.9556 18.1489 22.863 18.2511 22.863 18.4065C22.863 18.5715 22.9556 18.6641 23.1269 18.7013C25.147 19.0583 25.1203 19.1373 25.4571 21.0336C25.4826 21.1869 25.5773 21.2933 25.7423 21.2933Z"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_d_32_18" x="0.484863" y="0.529297" width="52.0151" height="56.9414" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                    <feOffset/>
+                    <feGaussianBlur stdDeviation="7.5"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.75 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_32_18"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_32_18" result="shape"/>
+                    </filter>
+                    </defs>
+                </svg>
+            </div>
+            <div id="ai-response">
+                <p id="ai-reply"></p>
+            </div>
+        </div>
+    
+        
     </div>
-
-    <div id="ai-response"></div>
-
-    <script type="module">
-        // Listen for AI response from main process
-        window.ipcRenderer.on('update-ai-response', (event, response) => {
-            document.getElementById('ai-response').innerText = response;
-        });
-    </script>
+    
+    <script src="config.js"></script>
 </body>
 </html>

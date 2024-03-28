@@ -1,17 +1,31 @@
 {
   "name": "hyperbar",
   "version": "1.0.0",
-  "description": "",
+  "description": "AI power at your fingertips always.",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
+  "build": {
+    "appId": "cc.superlist.hyperbar",
+    "win": {
+      "target": "nsis"
+    }
+  },  
   "keywords": [],
-  "author": "",
+  "author": "nite",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.6.8",
     "dotenv": "^16.4.5",
+    "openai": "^4.0.0"
+  },
+  "devDependencies": {
     "electron": "^29.1.5",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "electron-builder": "^24.13.3"
   }
 }

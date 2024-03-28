@@ -1,15 +1,24 @@
-import { ipcRenderer } from 'electron';
+const { contextBridge, ipcRenderer } = require('electron');
 
-// Assign ipcRenderer to window object
-window.ipcRenderer = ipcRenderer;
-console.log('ipcRenderer is available');
+contextBridge.exposeInMainWorld('electronAPI', {
+    sendAIQuery: (query) => ipcRenderer.send('ai-query', query),
+    receiveAIResponse: (callback) => {
+        ipcRenderer.on('ai-response', (event, ...args) => callback(...args));
+    },
+    typingEffectStart: (callback) => {
+        ipcRenderer.on('typing-started', (event) => callback());
+    },
+    typingEffectEnd: (callback) => {
+        ipcRenderer.on('typing-ended', (event) => callback());
+    },
+    resizeWindow: (newHeight) => ipcRenderer.send('resize-window', newHeight)
+});
 
-// Listen for user input in the search bar
-document.getElementById('search-input').addEventListener('keydown', async function(event) {
-    if (event.key === 'Enter') {
-        const query = event.target.value;
-        const aiResponse = await queryOpenAI(query);
-        // Send AI response to main process
-        ipcRenderer.send('ai-response', aiResponse);
-    }
+
+// Window resize react to response
+window.addEventListener('DOMContentLoaded', () => {
+    // Once the content is loaded, measure the element
+    const contentSize = document.getElementById('response').getBoundingClientRect();
+    // Send the height to the main process
+    ipcRenderer.send('resize-window', contentSize.height);
 });

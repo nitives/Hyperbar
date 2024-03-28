@@ -1,42 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 * {
     transition: ease 300ms;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge, and Firefox */
+* {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
 body {
   -webkit-app-region: no-drag;
 }
 
+.hyper-font {
+    font-family: 'SF Pro Display', sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
 #search-input {
     font-size: 24px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(20, 20, 20, 0.7);
-    backdrop-filter: blur(10px); /* Apply backdrop filter to the container */
-    padding: 15px;
-    padding-left: 25px;
-    border-radius: 10px;
+    background-color: rgba(20, 20, 20, 0.0);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: 14px;
+    padding-left: 20px;
+    border-radius: 6px;
 }
 
 #search-input:hover {
     transition: ease 300ms;
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(20, 20, 20, 0.0); /* Default rgba(20, 20, 20, 0.8) */
 }
 
 #search-input:focus {
     transition: ease 300ms;
-    background-color: rgba(20, 20, 20, 0.8);
+    background-color: rgba(20, 20, 20, 0.0); /* Default rgba(20, 20, 20, 0.8) */
+}
+
+.hyperbar {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0px;
+    flex-wrap: nowrap;
 }
 
 /* Input */
 
 input {
-    width: 97vw;
+    width: 90vw;
     height: 100%;
 }
 
@@ -52,5 +82,40 @@ input:focus {
     color: rgb(228, 228, 228);
 }
 
-
 /* ------------ */ 
+
+/* AI Response - CURRENTLY HIDDEN */
+
+#ai-response {
+    /* display: none; */
+    background-color: rgb(255 255 255 / 5%);
+    outline: solid 1px rgb(255 255 255 / 15%);
+    padding: 5px;
+    position: absolute;
+    top: 100%;
+    left: 2%;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 95%;
+    overflow: hidden; /* No scrollbar, letting the div expand */
+}
+
+#ai-reply {
+    word-wrap: break-word; /* Ensure long words do not cause overflow */
+}
+
+/* AI Icon */
+
+svg.flex {
+    aspect-ratio: 1 / 1;
+}
+
+.ai-icon:hover {
+    cursor: pointer;
+    transition: ease 300ms;
+    scale: 1.4;
+}
+
+
+
+

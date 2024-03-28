@@ -6,6 +6,6 @@ document.addEventListener('keydown', function(event) {
     // Check if ESC key is pressed
     if (event.key === 'Escape') {
         // Send message to main process to close the window
-        window.ipcRenderer.send('closehyper');
+        ipcRenderer.send('close-me');
     }
 });
