@@ -83,3 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ----------------------------------------------------------------------
+// Theme / Accent Color
+window.electronAPI.setAccentColor((color) => {
+    document.documentElement.style.setProperty('--accent-color', `#${color}`);
+  });
+
+// ----------------------------------------------------------------------

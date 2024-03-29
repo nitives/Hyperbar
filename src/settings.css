@@ -1,0 +1,12 @@
+/* @media (prefers-color-scheme: dark) {
+    * {
+        color: rgb(228, 228, 228);
+    }
+    #api-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    }
+  } */
+
+body {
+  -webkit-app-region: drag;
+}

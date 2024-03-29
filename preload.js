@@ -17,6 +17,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
         console.log("Close settings called in preload.js");
         ipcRenderer.send('close-settings');
     },
+    setAccentColor: (callback) => ipcRenderer.on('set-accent-color', (event, color) => callback(color)),
 });
 
 

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences } = require('electron');
 const path = require('path');
 let searchBarWindow;
 let searchBarSettingsWindow;
@@ -118,8 +118,41 @@ app.whenReady().then(() => {
     });
   
     if (!ret) {
-      console.error('Global shortcut registration failed');
+      console.error('Global shortcut registration failed - Control+Alt+K');
     }
+
+    const ret2 = globalShortcut.register('Esc', () => {
+      if (searchBarWindow.isVisible()) searchBarWindow.hide();
+    });
+
+    if (!ret2) {
+      console.error('Global shortcut registration failed - ESC');
+    }
+
+    const ret3 = globalShortcut.register('Control+S', () => {
+      if (searchBarWindow.isVisible()) {
+        if (!searchBarSettingsWindow) {
+          createsearchBarSettingsWindow();
+        }
+        searchBarSettingsWindow.show();
+      };
+    });
+
+    if (!ret3) {
+      console.error('Global shortcut registration failed - Control+S');
+    }
+
+    const ret4 = globalShortcut.register('Control+Q', () => {
+      if (searchBarWindow.isVisible() && searchBarWindow.isFocused()) {
+        app.exit();
+      }
+    });
+    
+    if (!ret4) {
+      console.error('Global shortcut registration failed - Control+Q');
+    }
+    
+    // ----------------------------------------------------------------
   
     // Hide the window when it's closed instead of quitting the app
     searchBarWindow.on('close', (event) => {
@@ -134,6 +167,14 @@ app.whenReady().then(() => {
       globalShortcut.unregisterAll();
       if (tray) tray.destroy();
     });
+
+    // -------------------------- Theme / Accent Color CSS --------------------------
+    // - Here is adding the Theme / Accent Color of the users Windows computer to the css palette
+    searchBarWindow.webContents.on('did-finish-load', () => {
+      const accentColor = systemPreferences.getAccentColor(); // RGBA hex
+      searchBarWindow.webContents.send('set-accent-color', accentColor);
+    });
+
   });
 // ------------------------------------------------------
 
@@ -173,9 +214,11 @@ function createsearchBarSettingsWindow() {
       y: y,
       icon: nativeImage.createFromPath(path.join(__dirname, 'icon.png')),
       opacity: 1.0,
-      frame: true, // Default - true
-      titleBarStyle: 'default',
+      frame: false, // Default - true
+      titleBarStyle: 'hidden',
       autoHideMenuBar: true,
+      minimizable: false,
+      maximizable: false,
       transparent: false, // Default - false
       alwaysOnTop: false, // Default - true
       resizable: true, // Default - false
@@ -226,3 +269,5 @@ ipcMain.on('close-settings', (event) => {
     searchBarSettingsWindow.close(); // searchBarSettingsWindow.hide is possible
   }
 });
+
+// ---------------------------------------------- Settings - End ----------------------------------------------
