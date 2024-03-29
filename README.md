@@ -25,11 +25,11 @@ End with an example of getting some data out of the system or using it for a lit
 
 ## Contributing
 
-Please read contact me at **@nitves** on **Discord** for details and the process for submitting pull requests to us.
+Please read contact me at **@nitves** on **Discord** for details and process for submitting pull requests to us.
 
 ## License
 
-This project is licensed under the GPL-3.0 License - see the [LICENSE.md](LICENSE-file-link) file for details.
+This project is licensed under the GPL-3.0 License - see the [LICENSE.md](LICENSE) file for details.
 
 ## Acknowledgments
 
