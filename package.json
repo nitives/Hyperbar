@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "build": {
     "appId": "cc.superlist.hyperbar",

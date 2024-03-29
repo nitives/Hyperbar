@@ -11,7 +11,12 @@ contextBridge.exposeInMainWorld('electronAPI', {
     typingEffectEnd: (callback) => {
         ipcRenderer.on('typing-ended', (event) => callback());
     },
-    resizeWindow: (newHeight) => ipcRenderer.send('resize-window', newHeight)
+    resizeWindow: (newHeight) => ipcRenderer.send('resize-window', newHeight),
+    openSettings: () => ipcRenderer.send('open-settings'),
+    closeSettings: () => {
+        console.log("Close settings called in preload.js");
+        ipcRenderer.send('close-settings');
+    },
 });
 
 
@@ -22,3 +27,5 @@ window.addEventListener('DOMContentLoaded', () => {
     // Send the height to the main process
     ipcRenderer.send('resize-window', contentSize.height);
 });
+
+// ----------------------------------------------------------------------

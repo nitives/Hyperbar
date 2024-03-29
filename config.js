@@ -29,8 +29,8 @@ searchInput.addEventListener('keydown', async function(event) {
     }
 });
 
+// Animate the AI response
 window.electronAPI.receiveAIResponse((response) => {
-    // Animate the AI response
     animateTyping(aiReplyElement, response);
 });
 
@@ -56,3 +56,30 @@ function animateTyping(element, text) {
 window.electronAPI.resizeWindow = (newHeight) => {
     ipcRenderer.send('resize-window', newHeight);
 };
+// ----------------------------------------------------------------------
+
+console.log('Settings Button Script Reached');
+
+// Settings button event handler
+const settingsBtn = document.getElementById('settings-btn');
+  settingsBtn.addEventListener('click', () => {
+    window.electronAPI.openSettings();
+    console.log('Settings Button Clicked');
+  });
+
+// ----------------------------------------------------------------------
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const closeBtn = document.getElementById('close-window');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            console.log("Close button clicked in settings");
+            window.electronAPI.closeSettings();
+        });
+    } else {
+        console.log("Close button not found");
+    }
+});
+
+// ----------------------------------------------------------------------

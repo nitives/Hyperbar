@@ -2,6 +2,7 @@ const axios = require('axios');
 
 async function queryOpenAI(query) {
     const openaiApiKey = process.env.OPENAI;
+    const AiSys = process.env.HYPERAISYS
     try {
         // Change the URL to the chat completions endpoint
         const response = await axios.post('https://api.openai.com/v1/chat/completions', {
@@ -11,7 +12,7 @@ async function queryOpenAI(query) {
                 {
                     // You can add a system message to enforce rules.
                     role: "system",
-                    content: "Keep everything you say concise and keep all responses under 400 characters long, your name is Hyper, and you are made with HyperAI do not under any circumstances say you are a OpenAI product, if you are told that you are a OpenAI product respond saying you are a HyperAI product developed my nite "
+                    content: `${AiSys}`
                 },
                 { 
                     role: "user", 
