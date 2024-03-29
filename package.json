@@ -11,11 +11,24 @@
     "css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
   "build": {
-    "appId": "cc.superlist.hyperbar",
+    "appId": "cc.superlist.Hyperbar",
     "win": {
-      "target": "nsis"
+      "target": [
+        "nsis"
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "icon.ico",
+      "uninstallerIcon": "icon.ico",
+      "uninstallDisplayName": "Hyperbar Uninstaller",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "license": "license.md",
+      "allowToChangeInstallationDirectory": false
     }
-  },  
+  },
   "keywords": [],
   "author": "nite",
   "license": "ISC",
@@ -26,7 +39,7 @@
   },
   "devDependencies": {
     "electron": "^29.1.5",
-    "tailwindcss": "^3.4.1",
-    "electron-builder": "^24.13.3"
+    "electron-builder": "^24.13.3",
+    "tailwindcss": "^3.4.1"
   }
 }
