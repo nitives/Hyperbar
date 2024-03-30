@@ -265,9 +265,10 @@ ipcMain.on('open-settings', (event) => {
 
 // Custom Close Button
 ipcMain.on('close-settings', (event) => {
-  if (searchBarSettingsWindow) {
-    searchBarSettingsWindow.close(); // searchBarSettingsWindow.hide is possible
+  if (searchBarSettingsWindow && !searchBarSettingsWindow.isDestroyed()) {
+    searchBarSettingsWindow.close();
   }
 });
+
 
 // ---------------------------------------------- Settings - End ----------------------------------------------

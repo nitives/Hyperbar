@@ -14,10 +14,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
     resizeWindow: (newHeight) => ipcRenderer.send('resize-window', newHeight),
     openSettings: () => ipcRenderer.send('open-settings'),
     closeSettings: () => {
-        console.log("Close settings called in preload.js");
         ipcRenderer.send('close-settings');
     },
-    setAccentColor: (callback) => ipcRenderer.on('set-accent-color', (event, color) => callback(color)),
+    setAccentColor: (callback) => ipcRenderer.on('set-accent-color', (event, color) => callback(color))
 });
 
 
@@ -30,3 +29,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // ----------------------------------------------------------------------
+
+console.log("preload.js loaded");

@@ -7,6 +7,7 @@
     }
   } */
 
-body {
+
+#window-drag-tool {
   -webkit-app-region: drag;
 }

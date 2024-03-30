@@ -4,30 +4,36 @@ const aiResponseElement = document.getElementById('ai-response');
 let inputHistory = [];
 let historyIndex = -1;
 
-searchInput.addEventListener('keydown', async function(event) {
-    if (event.key === 'Enter') {
-        // Save input to history and reset index
-        inputHistory = [event.target.value, ...inputHistory.slice(0, 4)];
-        historyIndex = -1;
+if (searchInput) {
+    searchInput.addEventListener('keydown', async function(event) {
+        if (event.key === 'Enter') {
+            // Save input to history and reset index
+            inputHistory = [event.target.value, ...inputHistory.slice(0, 4)];
+            historyIndex = -1;
+    
+            // Clear the previous response and hide the response element
+            aiReplyElement.textContent = '';
+            aiResponseElement.style.display = 'none';
+    
+            // Send the query to the main process
+            window.electronAPI.sendAIQuery(event.target.value);
+        } else if (event.key === 'ArrowUp') {
+            // Move back in input history
+            historyIndex = Math.min(historyIndex + 1, inputHistory.length - 1);
+            searchInput.value = inputHistory[historyIndex] || '';
+            event.preventDefault(); // Prevent cursor from moving
+        } else if (event.key === 'ArrowDown') {
+            // Move forward in input history
+            historyIndex = Math.max(historyIndex - 1, -1);
+            searchInput.value = inputHistory[historyIndex] || '';
+            event.preventDefault(); // Prevent cursor from moving
+        }
+    });
+} else {
+        console.log('"search-input" Does not exist on this page');
+}
 
-        // Clear the previous response and hide the response element
-        aiReplyElement.textContent = '';
-        aiResponseElement.style.display = 'none';
 
-        // Send the query to the main process
-        window.electronAPI.sendAIQuery(event.target.value);
-    } else if (event.key === 'ArrowUp') {
-        // Move back in input history
-        historyIndex = Math.min(historyIndex + 1, inputHistory.length - 1);
-        searchInput.value = inputHistory[historyIndex] || '';
-        event.preventDefault(); // Prevent cursor from moving
-    } else if (event.key === 'ArrowDown') {
-        // Move forward in input history
-        historyIndex = Math.max(historyIndex - 1, -1);
-        searchInput.value = inputHistory[historyIndex] || '';
-        event.preventDefault(); // Prevent cursor from moving
-    }
-});
 
 // Animate the AI response
 window.electronAPI.receiveAIResponse((response) => {
@@ -58,34 +64,36 @@ window.electronAPI.resizeWindow = (newHeight) => {
 };
 // ----------------------------------------------------------------------
 
-console.log('Settings Button Script Reached');
-
+console.log('Settings Button Success - settingsBtn');
 // Settings button event handler
 const settingsBtn = document.getElementById('settings-btn');
-  settingsBtn.addEventListener('click', () => {
-    window.electronAPI.openSettings();
-    console.log('Settings Button Clicked');
-  });
+if (settingsBtn) {
+    settingsBtn.addEventListener('click', () => {
+        window.electronAPI.openSettings();
+        console.log('Settings Button Clicked');
+    });
+}
 
 // ----------------------------------------------------------------------
+// Settings close button
+console.log('Settings Close Button Success - settingsCloseBtn');
+const settingsCloseBtn = document.getElementById('close-window');
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    const closeBtn = document.getElementById('close-window');
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            console.log("Close button clicked in settings");
-            window.electronAPI.closeSettings();
-        });
-    } else {
-        console.log("Close button not found");
-    }
-});
+if (settingsCloseBtn) {
+    settingsCloseBtn.addEventListener('click', () => {
+        window.electronAPI.closeSettings();
+        console.log('Close Settings Button Clicked');
+    });
+}
 
 // ----------------------------------------------------------------------
 // Theme / Accent Color
+console.log('Accent Script Success - setAccentColor');
 window.electronAPI.setAccentColor((color) => {
-    document.documentElement.style.setProperty('--accent-color', `#${color}`);
-  });
+    console.log('Accent Color Set');
+    document.documentElement.style.setProperty('--accent-color', `#${color}`)
+});
 
 // ----------------------------------------------------------------------
+
+console.log("preload.js loaded");

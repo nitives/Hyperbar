@@ -544,6 +544,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.absolute {
+  position: absolute;
+}
+
+.top-0 {
+  top: 0px;
+}
+
 .m-4 {
   margin: 1rem;
 }
@@ -568,6 +576,10 @@ video {
   aspect-ratio: 1 / 1;
 }
 
+.h-11 {
+  height: 2.75rem;
+}
+
 .h-4 {
   height: 1rem;
 }
@@ -584,12 +596,12 @@ video {
   width: 1.5rem;
 }
 
-.w-\[90\%\] {
-  width: 90%;
-}
-
 .w-auto {
   width: auto;
+}
+
+.w-screen {
+  width: 100vw;
 }
 
 .resize {
@@ -624,6 +636,10 @@ video {
 
 .bg-main {
   background-color: var(--accent-color);
+}
+
+.bg-transparent {
+  background-color: transparent;
 }
 
 .bg-white\/10 {
