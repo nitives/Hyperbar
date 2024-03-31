@@ -33,10 +33,9 @@ if (searchInput) {
         console.log('"search-input" Does not exist on this page');
 }
 
-
-
 // Animate the AI response
 window.electronAPI.receiveAIResponse((response) => {
+    aiResponseElement.style.display = 'block';
     animateTyping(aiReplyElement, response);
 });
 
@@ -76,24 +75,58 @@ if (settingsBtn) {
 
 // ----------------------------------------------------------------------
 // Settings close button
-console.log('Settings Close Button Success - settingsCloseBtn');
-const settingsCloseBtn = document.getElementById('close-window');
-
-if (settingsCloseBtn) {
-    settingsCloseBtn.addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', (event) => {
+    const settingsCloseBtn = document.getElementById('close-window');
+    if (settingsCloseBtn) {
+      settingsCloseBtn.addEventListener('click', () => {
         window.electronAPI.closeSettings();
         console.log('Close Settings Button Clicked');
-    });
-}
+      });
+    } else {
+      console.log("Close button not found");
+    }
+  });
 
 // ----------------------------------------------------------------------
-// Theme / Accent Color
+
 console.log('Accent Script Success - setAccentColor');
 window.electronAPI.setAccentColor((color) => {
     console.log('Accent Color Set');
     document.documentElement.style.setProperty('--accent-color', `#${color}`)
 });
 
+// ----------------------------------------------------------------------
+// API Key for settings
+
+document.getElementById('save-api-key').addEventListener('click', () => {
+    const apiKey = document.getElementById('api-input').value;
+    window.electronAPI.saveApiKey(apiKey);
+  });
+  
+  // Listen for the reply from the main process
+  window.electronAPI.onApiKeyStatus((status) => {
+    const statusElement = document.getElementById('api-key-status');
+    if (status.valid) {
+      statusElement.style.color = '#42dd76';
+      statusElement.textContent = 'API Key is valid!';
+    } else {
+      statusElement.style.color = '#ff4c4c';
+      statusElement.textContent = `Invalid API Key | ${status.message}`;
+    }
+  });
+
+// API Key for settings - End
+// ----------------------------------------------------------------------
+
+// Open on startup
+
+window.addEventListener('DOMContentLoaded', () => {
+    // Get the current login settings and update the checkbox
+    const isSetToStart = window.electronAPI.getLoginItemSettings().openAtLogin;
+    document.getElementById('startup-checkbox').checked = isSetToStart;
+  });
+
+// Open on startup - End
 // ----------------------------------------------------------------------
 
 console.log("preload.js loaded");

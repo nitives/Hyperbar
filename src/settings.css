@@ -11,3 +11,9 @@
 #window-drag-tool {
   -webkit-app-region: drag;
 }
+
+/* Checkbox */
+
+input[type="checkbox"] {
+  background: red;
+}

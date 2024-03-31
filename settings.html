@@ -8,25 +8,31 @@
     <link rel="stylesheet" href="src/settings.css">
     <title>Hyperbar</title>
 </head>
-<div id="window-drag-tool" class="w-screen h-11 bg-transparent absolute top-0"></div>
+<div id="window-drag-tool" class="w-[96vw] h-11 bg-transparent absolute top-0 -z-10"></div>
 <body class="dark:text-[#1a1a1a]">
     <div class="m-4">
-        <button id="close-window" class="hidden">
+        <button id="close-window" class="hiden z-10">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
               </svg> 
         </button>
              
-        <p class="text-2xl pb-4">Settings</p>
-        <div class="pb-2">
+        <p class="text-3xl pb-4 font-bold">Settings</p>
+
+        <div id="api-settings" class="pb-2">
             <p>OpenAI API Key</p>
-            <input class="flex placeholder-white/30 bg-white/10 rounded" type="text" id="api-input" placeholder="sk-...">
+                <div class="inline-flex my-1 items-center">
+                    <input id="api-input" class="flex placeholder-white/30 mr-2 p-3" type="text" placeholder="sk-...">
+                    <button id="save-api-key" class="bg-black/20 p-4 px-5 rounded-2xl">Save</button>
+                </div>
+            <p id="api-key-status"></p>
         </div>
+
         <div>    
             <div id="startup" class="flex items-center gap-3 justify-start w-auto">
-                <label for="startup-checkbox" class="ms-2">Open on startup</label>
+                <label for="startup-checkbox" class="">Open on startup</label>
                 <input id="startup-checkbox" type="checkbox" name="startup-checkbox" value="startup" 
-                class="w-4 h-4 text-main bg-gray-100 border-gray-300 rounded focus:ring-main dark:focus:ring-main dark:ring-offset-slate-800 focus:ring-2 dark:bg-slate-700 dark:border-slate-600">
+                class="grayscale w-4 h-4 text-main bg-slate-100 border-slate-300 rounded focus:ring-main dark:focus:ring-main dark:ring-offset-slate-800 focus:ring-2 dark:bg-slate-700 dark:border-slate-600">
             </div>
         </div>
     </div>

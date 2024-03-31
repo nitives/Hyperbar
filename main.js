@@ -1,6 +1,8 @@
 require('dotenv').config();
-const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences, dialog } = require('electron');
 const path = require('path');
+const fs = require('fs');
+const axios = require('axios');
 let searchBarWindow;
 let searchBarSettingsWindow;
 
@@ -270,5 +272,35 @@ ipcMain.on('close-settings', (event) => {
   }
 });
 
+// --------------------------- API Input ---------------------------
+
+// IPC listener for saving the API key
+ipcMain.on('save-api-key', async (event, apiKey) => {
+  
+  // Make a test request to OpenAI to verify the API key is valid
+  try {
+    const response = await axios.get('https://api.openai.com/v1/engines', {
+      headers: { 'Authorization': `Bearer ${apiKey}` }
+    });
+    
+    // If the response is successful, it means the API key is valid.
+    event.reply('api-key-status', { valid: true });
+  } catch (error) {
+    // If there is an error, it means the API key might be invalid.
+    event.reply('api-key-status', { valid: false, message: error.message });
+  }
+});
+
+// ---------------------------- API Input End 
 
 // ---------------------------------------------- Settings - End ----------------------------------------------
+
+
+// --------------------------- Open on startup ---------------------------
+ipcMain.on('toggle-startup', (event, shouldStartOnLogin) => {
+  app.setLoginItemSettings({
+    openAtLogin: shouldStartOnLogin,
+  });
+});
+
+// ---------------------------- Open on startup - End 

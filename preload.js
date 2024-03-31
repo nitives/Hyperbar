@@ -16,7 +16,21 @@ contextBridge.exposeInMainWorld('electronAPI', {
     closeSettings: () => {
         ipcRenderer.send('close-settings');
     },
-    setAccentColor: (callback) => ipcRenderer.on('set-accent-color', (event, color) => callback(color))
+    setAccentColor: (callback) => ipcRenderer.on('set-accent-color', (event, color) => callback(color)),
+
+    // Open on startup
+    toggleStartup: (shouldStartOnLogin) => {
+        ipcRenderer.send('toggle-startup', shouldStartOnLogin);
+    },
+
+    getLoginItemSettings: () => {
+        return ipcRenderer.invoke('get-login-settings');
+    },
+    // -------------
+
+    // API Key Input in Settings
+    saveApiKey: (apiKey) => ipcRenderer.send('save-api-key', apiKey),
+    onApiKeyStatus: (callback) => ipcRenderer.on('api-key-status', (event, status) => callback(status))
 });
 
 
@@ -26,6 +40,19 @@ window.addEventListener('DOMContentLoaded', () => {
     const contentSize = document.getElementById('response').getBoundingClientRect();
     // Send the height to the main process
     ipcRenderer.send('resize-window', contentSize.height);
+});
+
+// ----------------------------------------------------------------------
+// Open on startup
+const startupCheckbox = document.getElementById('startup-checkbox');
+
+startupCheckbox.addEventListener('change', () => {
+  const shouldStartOnLogin = startupCheckbox.checked;
+  window.electronAPI.toggleStartup(shouldStartOnLogin);
+});
+
+ipcMain.handle('get-login-settings', () => {
+    return app.getLoginItemSettings();
 });
 
 // ----------------------------------------------------------------------

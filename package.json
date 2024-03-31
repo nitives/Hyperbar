@@ -1,7 +1,7 @@
 {
   "name": "hyperbar",
-  "version": "0.2.2",
-  "description": "AI power at your fingertips always.",
+  "version": "0.2.4",
+  "description": "The power of AI always at your fingertips.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"No tests specified\"",

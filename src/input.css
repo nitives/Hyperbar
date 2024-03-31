@@ -4,7 +4,7 @@
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 :root {
-    --accent-color: #4163c2; /* Default color */
+    --accent-color: #a441c2; /* Default color */
 }
 
 * {
@@ -95,7 +95,7 @@ input:focus {
 /* AI Response - CURRENTLY HIDDEN */
 
 #ai-response {
-    /* display: none; */
+    display: none;
     background-color: rgb(255 255 255 / 5%);
     outline: solid 1px rgb(255 255 255 / 15%);
     padding: 5px;
@@ -130,13 +130,14 @@ svg.flex {
     background-color: rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    padding: 10px;
     padding-left: 15px;
     border-radius: 15px;
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
 }
+
+/* #api-settings {
+
+} */
 
 /* Custom Close Button */
 
