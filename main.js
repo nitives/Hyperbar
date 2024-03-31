@@ -16,7 +16,7 @@ const y = Math.floor((height - windowHeight) / 2);
 searchBarWindow = new BrowserWindow({
     title: 'Hyperbar',
     show: false,
-    icon: nativeImage.createFromPath(path.join(__dirname, 'icon.png')),
+    icon: nativeImage.createFromPath(path.join(__dirname, './src/assets/icon.png')),
     width: windowWidth,
     height: windowHeight,
     x: x,
@@ -89,7 +89,7 @@ ipcMain.on('resize-window', (event, contentHeight) => {
 app.whenReady().then(() => {
     createSearchBarWindow();
   
-    tray = new Tray(path.join(__dirname, 'icon.png'));
+    tray = new Tray(path.join(__dirname, './src/assets/icon.png'));
     tray.setToolTip('Hyperbar');
   
     // Context menu for tray icon
@@ -214,7 +214,7 @@ function createsearchBarSettingsWindow() {
       height: settingsWindowHeight,
       x: x,
       y: y,
-      icon: nativeImage.createFromPath(path.join(__dirname, 'icon.png')),
+      icon: nativeImage.createFromPath(path.join(__dirname, './src/assets/icon.png')),
       opacity: 1.0,
       frame: false, // Default - true
       titleBarStyle: 'hidden',

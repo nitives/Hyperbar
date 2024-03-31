@@ -17,12 +17,12 @@
       "target": [
         "nsis"
       ],
-      "icon": "icon.ico"
+      "icon": "./src/assets/./src/assets/icon.ico"
     },
     "nsis": {
       "oneClick": true,
-      "installerIcon": "icon.ico",
-      "uninstallerIcon": "icon.ico",
+      "installerIcon": "./src/assets/icon.ico",
+      "uninstallerIcon": "./src/assets/icon.ico",
       "uninstallDisplayName": "Hyperbar Uninstaller",
       "createDesktopShortcut": true,
       "createStartMenuShortcut": true,
