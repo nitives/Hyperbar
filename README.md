@@ -12,6 +12,15 @@ Hyperbar is an always-there desktop assistant designed to simplify your interact
 - **Seamless Integration**: Hyperbar sits quietly in your system tray, ready to assist without intruding on your workspace.
 - **Customizable**: Open the settings pane to tailor Hyperbar to your preferences.
 
+### Shortcuts
+`CTRL+ALT+K` *or* `⌘+ALT+K` **-** **Open Hyperbar**
+<br>
+`CTRL+S` *or* `⌘+S`  **-** **Open Settings**, *while Hyperbar is open*
+<br>
+`ESC` **-** **Close Hyperbar**, *while tabbed in app*
+<br>
+`CTRL+Q` *or* `⌘+Q` **-** **End / Quit Hyperbar**, *while tabbed in app*
+
 ## Getting Started
 
 These instructions will get you a copy of Hyperbar up and running on your local machine for development and testing purposes.
