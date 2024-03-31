@@ -1,8 +1,14 @@
 require('dotenv').config();
-const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences, dialog } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
+const { saveApiKey, getApiKey } = require('./main/apiKey.js');
+const queryOpenAI = require('./openai');
+
+const userDataPath = app.getPath('userData');
+const settingsPath = path.join(userDataPath, 'settings.json');
+
 let searchBarWindow;
 let searchBarSettingsWindow;
 
@@ -57,18 +63,8 @@ searchBarWindow.on('focus', () => {
     searchBarWindow.setBackgroundMaterial('acrylic'); // Re-enable the acrylic effect
 });
 }
-// ---------------------------------------------------------------------------------------
 
-ipcMain.on('ai-query', async (event, query) => {
-    const queryOpenAI = require('./openai');
-    try {
-        const response = await queryOpenAI(query);
-        event.reply('ai-response', response);
-    } catch (error) {
-        console.error('Error querying OpenAI:', error);
-        event.reply('ai-response', 'Error: Unable to process your query');
-    }
-});
+// ---------------------------------------------------------------------------------------
 
 // Resize window to match text box sizes
 
@@ -177,6 +173,8 @@ app.whenReady().then(() => {
       searchBarWindow.webContents.send('set-accent-color', accentColor);
     });
 
+    ensureSettingsFileExists();
+
   });
 // ------------------------------------------------------
 
@@ -258,6 +256,38 @@ function createsearchBarSettingsWindow() {
 
 }
 
+// --------------------------- API Key Input ---------------------------
+
+// Handle saving API key from settings
+ipcMain.on('save-api-key', (event, apiKey) => {
+  saveApiKey(apiKey); // Save the API key using the function from apiKey.js
+  event.reply('api-key-saved', true); // Send a confirmation back to the renderer process
+
+  console.log(`API Key Saved: ${apiKey}`);
+  event.reply('api-key-status', { valid: true, message: 'API Key saved successfully!' });
+});
+
+ipcMain.on('ai-query', async (event, query) => {
+  const apiKey = getApiKey(); // Fetch the API key using the function from apiKey.js
+  try {
+    // Now pass the apiKey to the queryOpenAI function
+    const response = await queryOpenAI(query, apiKey);
+    event.reply('ai-response', response);
+  } catch (error) {
+    console.error('Error querying OpenAI:', error);
+    event.reply('ai-response', 'Error: Unable to process your query');
+  }
+});
+
+// ---------------------------- 
+function ensureSettingsFileExists() {
+  // Check if the settings file exists, and create it with default values if it doesn't
+  if (!fs.existsSync(settingsPath)) {
+    fs.writeFileSync(settingsPath, JSON.stringify({}));
+  }
+}
+// ---------------------------- API Key Input End ----------------------
+
 ipcMain.on('open-settings', (event) => {
   if (!searchBarSettingsWindow) {
     createsearchBarSettingsWindow();
@@ -272,35 +302,17 @@ ipcMain.on('close-settings', (event) => {
   }
 });
 
-// --------------------------- API Input ---------------------------
-
-// IPC listener for saving the API key
-ipcMain.on('save-api-key', async (event, apiKey) => {
-  
-  // Make a test request to OpenAI to verify the API key is valid
-  try {
-    const response = await axios.get('https://api.openai.com/v1/engines', {
-      headers: { 'Authorization': `Bearer ${apiKey}` }
-    });
-    
-    // If the response is successful, it means the API key is valid.
-    event.reply('api-key-status', { valid: true });
-  } catch (error) {
-    // If there is an error, it means the API key might be invalid.
-    event.reply('api-key-status', { valid: false, message: error.message });
-  }
-});
-
-// ---------------------------- API Input End 
-
 // ---------------------------------------------- Settings - End ----------------------------------------------
 
-
-// --------------------------- Open on startup ---------------------------
+// --------------------------- Open on startup -------------------------
 ipcMain.on('toggle-startup', (event, shouldStartOnLogin) => {
   app.setLoginItemSettings({
     openAtLogin: shouldStartOnLogin,
   });
 });
 
-// ---------------------------- Open on startup - End 
+ipcMain.handle('get-login-settings', () => {
+  return app.getLoginItemSettings();
+});
+
+// ---------------------------- Open on startup - End ------------------

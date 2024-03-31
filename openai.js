@@ -1,7 +1,8 @@
 const axios = require('axios');
+const { getApiKey } = require('./main/apiKey.js'); // Import the getApiKey function
 
 async function queryOpenAI(query) {
-    const openaiApiKey = process.env.OPENAI;
+    const openaiApiKey = getApiKey();
     const AiSys = process.env.HYPERAISYS
     try {
         // Change the URL to the chat completions endpoint
@@ -9,15 +10,8 @@ async function queryOpenAI(query) {
             model: "gpt-3.5-turbo-0125", // Ensure this is the correct model for chat.
             max_tokens: 60,
             messages: [
-                {
-                    // You can add a system message to enforce rules.
-                    role: "system",
-                    content: `${AiSys}`
-                },
-                { 
-                    role: "user", 
-                    content: query 
-                }
+                { role: "system", content: `${AiSys}` },
+                { role: "user", content: query }
             ], // Structure the payload as a sequence of messages.
         }, {
             headers: {

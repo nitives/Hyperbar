@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' 'unsafe-eval' 'sha256-BliFmpqYIWmsKH4lABEPCv/h5E6X4z+BKK5PJog=';">
     <link rel="stylesheet" href="src/output.css">
     <link rel="stylesheet" href="src/settings.css">
     <title>Hyperbar</title>
@@ -22,8 +22,8 @@
         <div id="api-settings" class="pb-2">
             <p>OpenAI API Key</p>
                 <div class="inline-flex my-1 items-center">
-                    <input id="api-input" class="flex placeholder-white/30 mr-2 p-3" type="text" placeholder="sk-...">
-                    <button id="save-api-key" class="bg-black/20 p-4 px-5 rounded-2xl">Save</button>
+                    <input id="api-input" class="flex placeholder-white/30 mr-2 p-3" type="text" placeholder="sk-..."> <!-- Input for your API key -->
+                   <button id="save-api-key" class="bg-black/20 p-4 px-5 rounded-2xl">Save</button> <!-- Button that applys your API key -->
                 </div>
             <p id="api-key-status"></p>
         </div>
@@ -37,6 +37,6 @@
         </div>
     </div>
     
-    <script src="config.js"></script>
+    <script defer src="config.js"></script>
 </body>
 </html>

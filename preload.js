@@ -28,20 +28,33 @@ contextBridge.exposeInMainWorld('electronAPI', {
     },
     // -------------
 
-    // API Key Input in Settings
+    // API Key Input section starts here
+    
     saveApiKey: (apiKey) => ipcRenderer.send('save-api-key', apiKey),
-    onApiKeyStatus: (callback) => ipcRenderer.on('api-key-status', (event, status) => callback(status))
+    onApiKeyStatus: (callback) => { ipcRenderer.on('api-key-status', (event, ...args) => callback(...args)); },
+
+    // ------------- API Key Input section ends here
 });
 
 
 // Window resize react to response
 window.addEventListener('DOMContentLoaded', () => {
-    // Once the content is loaded, measure the element
-    const contentSize = document.getElementById('response').getBoundingClientRect();
-    // Send the height to the main process
-    ipcRenderer.send('resize-window', contentSize.height);
-});
-
+    // Check if we are in the main window by looking for a unique identifier
+    const isMainWindow = document.body.id === 'main-window';
+    
+    if(isMainWindow) {
+      // Check if the element exists before calling getBoundingClientRect
+      const responseElement = document.getElementById('response');
+      if (responseElement) {
+          const contentSize = responseElement.getBoundingClientRect();
+          // Send the height to the main process
+          ipcRenderer.send('resize-window', contentSize.height);
+      } else {
+          console.error("Element with ID 'response' was not found in the main window.");
+      }
+    }
+  });
+  
 // ----------------------------------------------------------------------
 // Open on startup
 const startupCheckbox = document.getElementById('startup-checkbox');
@@ -49,10 +62,6 @@ const startupCheckbox = document.getElementById('startup-checkbox');
 startupCheckbox.addEventListener('change', () => {
   const shouldStartOnLogin = startupCheckbox.checked;
   window.electronAPI.toggleStartup(shouldStartOnLogin);
-});
-
-ipcMain.handle('get-login-settings', () => {
-    return app.getLoginItemSettings();
 });
 
 // ----------------------------------------------------------------------

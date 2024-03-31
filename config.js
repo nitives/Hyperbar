@@ -1,6 +1,8 @@
 const searchInput = document.getElementById('search-input');
 const aiReplyElement = document.getElementById('ai-reply');
 const aiResponseElement = document.getElementById('ai-response');
+const saveButton = document.getElementById('save-api-key');
+const ipcRenderer = window.electronAPI;
 let inputHistory = [];
 let historyIndex = -1;
 
@@ -57,10 +59,6 @@ function animateTyping(element, text) {
     }, 50); // Speed of typing, in milliseconds
 }
 
-// Example function to send the new height to the main process
-window.electronAPI.resizeWindow = (newHeight) => {
-    ipcRenderer.send('resize-window', newHeight);
-};
 // ----------------------------------------------------------------------
 
 console.log('Settings Button Success - settingsBtn');
@@ -98,22 +96,28 @@ window.electronAPI.setAccentColor((color) => {
 // ----------------------------------------------------------------------
 // API Key for settings
 
-document.getElementById('save-api-key').addEventListener('click', () => {
-    const apiKey = document.getElementById('api-input').value;
-    window.electronAPI.saveApiKey(apiKey);
-  });
-  
-  // Listen for the reply from the main process
-  window.electronAPI.onApiKeyStatus((status) => {
+  if (saveButton) {
+    saveButton.addEventListener('click', () => {
+        const apiKey = document.getElementById('api-input').value;
+        // Call the method to save the API key through electronAPI
+        if(window.electronAPI && typeof window.electronAPI.saveApiKey === 'function') {
+            window.electronAPI.saveApiKey(apiKey);
+        }
+    });
+  }
+
+// Listen for the reply from the main process
+window.electronAPI.onApiKeyStatus((status) => {
     const statusElement = document.getElementById('api-key-status');
     if (status.valid) {
-      statusElement.style.color = '#42dd76';
-      statusElement.textContent = 'API Key is valid!';
+        statusElement.style.color = '#42dd76';
+        statusElement.textContent = 'API Key is valid!';
     } else {
-      statusElement.style.color = '#ff4c4c';
-      statusElement.textContent = `Invalid API Key | ${status.message}`;
+        statusElement.style.color = '#ff4c4c';
+        statusElement.textContent = `Invalid API Key | ${status.message}`;
     }
-  });
+});
+  
 
 // API Key for settings - End
 // ----------------------------------------------------------------------
@@ -129,4 +133,4 @@ window.addEventListener('DOMContentLoaded', () => {
 // Open on startup - End
 // ----------------------------------------------------------------------
 
-console.log("preload.js loaded");
+console.log("config.js loaded");
