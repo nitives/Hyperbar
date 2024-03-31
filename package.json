@@ -12,6 +12,7 @@
   },
   "build": {
     "appId": "cc.superlist.Hyperbar",
+    "productName": "Hyperbar",
     "win": {
       "target": [
         "nsis"
