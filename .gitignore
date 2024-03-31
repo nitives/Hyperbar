@@ -3,3 +3,6 @@ node_modules
 
 # In app license
 license.md
+
+# Old settings
+hypersettings.json
