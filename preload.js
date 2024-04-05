@@ -12,6 +12,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
         ipcRenderer.on('typing-ended', (event) => callback());
     },
     resizeWindow: (newHeight) => ipcRenderer.send('resize-window', newHeight),
+    hideWindow: () => ipcRenderer.send('hide-window'),
     openSettings: () => ipcRenderer.send('open-settings'),
     closeSettings: () => {
         ipcRenderer.send('close-settings');

@@ -133,4 +133,14 @@ window.addEventListener('DOMContentLoaded', () => {
 // Open on startup - End
 // ----------------------------------------------------------------------
 
-console.log("config.js loaded");
+// Local shortcuts
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      window.electronAPI.hideWindow();
+    }
+  });
+
+// ----------------------------------------------------------------------
+
+console.log("renderer.js loaded");

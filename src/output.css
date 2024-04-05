@@ -544,22 +544,6 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.-z-10 {
-  z-index: -10;
-}
-
-.z-10 {
-  z-index: 10;
-}
-
 .m-4 {
   margin: 1rem;
 }
@@ -593,8 +577,9 @@ video {
   aspect-ratio: 1 / 1;
 }
 
-.h-11 {
-  height: 2.75rem;
+.size-16 {
+  width: 4rem;
+  height: 4rem;
 }
 
 .h-4 {
@@ -613,8 +598,8 @@ video {
   width: 1.5rem;
 }
 
-.w-\[96vw\] {
-  width: 96vw;
+.w-\[100vw\] {
+  width: 100vw;
 }
 
 .w-auto {
@@ -631,6 +616,10 @@ video {
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .gap-3 {
@@ -654,13 +643,19 @@ video {
   background-color: rgb(0 0 0 / 0.2);
 }
 
+.bg-blue-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
-}
-
-.bg-transparent {
-  background-color: transparent;
 }
 
 .p-3 {
@@ -712,10 +707,6 @@ video {
 
 .grayscale {
   --tw-grayscale: grayscale(100%);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-
-.filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -847,8 +838,13 @@ svg.flex {
 }
 
 .ai-icon:hover {
-  transition: ease 300ms;
+  transition: ease 500ms;
   scale: 1.4;
+  filter: drop-shadow(0px 0px 5px white);
+}
+
+#settings-btn {
+  padding-inline: 15px;
 }
 
 /* API Input */
@@ -866,26 +862,6 @@ svg.flex {
 /* #api-settings {
 
 } */
-
-/* Custom Close Button */
-
-#close-window {
-  position: absolute;
-  top: 0%;
-  left: 100%;
-  padding-right: 50px;
-  padding-top: 11px;
-  transform: translateX(-50%);
-  text-decoration: none;
-}
-
-#close-window svg {
-  stroke: white;
-  &:hover {
-    stroke: rgba(255, 255, 255, 0.5);
-    transition: ease 15ms;
-  }
-}
 
 .focus\:ring-2:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);

@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences, MenuItem } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
@@ -119,14 +119,6 @@ app.whenReady().then(() => {
       console.error('Global shortcut registration failed - Control+Alt+K');
     }
 
-    const ret2 = globalShortcut.register('Esc', () => {
-      if (searchBarWindow.isVisible()) searchBarWindow.hide();
-    });
-
-    if (!ret2) {
-      console.error('Global shortcut registration failed - ESC');
-    }
-
     const ret3 = globalShortcut.register('Control+S', () => {
       if (searchBarWindow.isVisible()) {
         if (!searchBarSettingsWindow) {
@@ -190,6 +182,12 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') {
         app.quit();
     }
+});
+
+ipcMain.on('hide-window', () => {
+  if (searchBarWindow) {
+    searchBarWindow.hide();
+  }
 });
 
 

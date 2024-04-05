@@ -119,8 +119,13 @@ svg.flex {
 }
 
 .ai-icon:hover {
-    transition: ease 300ms;
+    transition: ease 500ms;
     scale: 1.4;
+    filter: drop-shadow(0px 0px 5px white);
+}
+
+#settings-btn {
+    padding-inline: 15px;
 }
 
 /* API Input */
@@ -138,20 +143,3 @@ svg.flex {
 /* #api-settings {
 
 } */
-
-/* Custom Close Button */
-
-#close-window {
-    position: absolute;
-    top: 0%;
-    left: 100%;
-    padding-right: 50px;
-    padding-top: 11px;
-    transform: translateX(-50%);
-    text-decoration: none;
-}
-
-#close-window svg {
-    stroke: white;
-    &:hover { stroke: rgba(255, 255, 255, 0.5); transition: ease 15ms;  }
-}

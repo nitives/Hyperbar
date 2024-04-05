@@ -6,3 +6,6 @@ license.md
 
 # Old settings
 hypersettings.json
+
+# AI settings
+openai.js
