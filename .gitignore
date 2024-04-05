@@ -1,11 +1,5 @@
 node_modules
 .env
-
-# In app license
 license.md
-
-# Old settings
 hypersettings.json
-
-# AI settings
 openai.js
