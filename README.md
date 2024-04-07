@@ -6,7 +6,7 @@ Hyperbar is an always-there desktop assistant designed to simplify your interact
 
 *This project is for me to learn JavaScript, I'm still in High School, so take this into consideration*
 
-## [What's new?](./changelogs/2.2.7.md) - [Previous Change Log](./changelogs/2.2.6.md)
+## [What's new?](./changelogs/0.2.7.md) - [Previous Change Log](./changelogs/0.2.6.md)
 
 ## Features
 
