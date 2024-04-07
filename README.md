@@ -4,7 +4,9 @@
 
 Hyperbar is an always-there desktop assistant designed to simplify your interactions with your computer. It provides a sleek and minimalistic interface that you can summon at any time with a simple keyboard shortcut.
 
-## [What's new?](./changelogs/2.2.6.md) - [Previous Change Log](./changelogs/2.2.5.md)
+*This project is for me to learn JavaScript, I'm still in High School, so take this into consideration*
+
+## [What's new?](./changelogs/2.2.7.md) - [Previous Change Log](./changelogs/2.2.6.md)
 
 ## Features
 
