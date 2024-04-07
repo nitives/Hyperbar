@@ -4,7 +4,14 @@
 @import url('https://fonts.cdnfonts.com/css/sf-pro-display');
 
 :root {
-    --accent-color: #a441c2; /* Default color */
+    --accent-color: #353535; /* Default color */
+}
+
+.bg-main-button {
+    background-color: var(--accent-color);
+    &.bg-main-button:hover {
+        background-image: linear-gradient(rgb(0 0 0/35%) 0 0);
+    }
 }
 
 * {
@@ -39,8 +46,6 @@ body {
 #search-input {
     font-size: 24px;
     background-color: rgba(20, 20, 20, 0.0);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
     padding: 14px;
     padding-left: 20px;
     border-radius: 6px;
@@ -130,7 +135,7 @@ svg.flex {
 
 /* API Input */
 
-#api-input {
+/* #api-input {
     font-size: 24px;
     background-color: rgba(255, 255, 255, 0.2);
     -webkit-backdrop-filter: blur(10px);
@@ -138,7 +143,7 @@ svg.flex {
     padding-left: 15px;
     border-radius: 15px;
     width: 100%;
-}
+} */
 
 /* #api-settings {
 

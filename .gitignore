@@ -1,5 +1,14 @@
+# npm
 node_modules
+package-lock.json
+
+# secrets
 .env
+
+# vscode
+.vscode
+
+# more
 license.md
 hypersettings.json
 openai.js

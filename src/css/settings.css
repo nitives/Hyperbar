@@ -1,0 +1,224 @@
+/* @media (prefers-color-scheme: dark) {
+    * {
+        color: rgb(228, 228, 228);
+    }
+    #api-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    }
+  } */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1))
+}
+
+p, span {
+  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1))
+}
+
+@media (prefers-color-scheme: dark) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.0))
+  }
+
+  p, span {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.0))
+  }
+}
+
+#window-bar {
+  /* position: absolute; */
+  z-index: 10;
+}
+
+#window-drag-tool {
+  /* outline: 1px solid white; */
+  -webkit-app-region: drag;
+  width: 100vw;
+  height: 45px;
+  background-color: transparent;
+  top: 0px;
+}
+
+/* Custom Close Button */
+
+#close-window {
+    /* position: absolute; */
+    margin: 10px;
+    text-decoration: none;
+    background: none;
+    border: none;
+}
+
+#close-window svg {
+    stroke: white;
+    &:hover { stroke: rgba(255, 255, 255, 0.5); transition: ease 15ms;  }
+}
+
+.settings-container {
+  position: relative;
+  bottom: 50px;
+  margin-right: 45px;
+  z-index: 1;
+}
+
+/* Colors  --------------------------------------------------- */
+
+:root {
+  --color-main: #f0f0f0;
+  --color-sub: #ffffff80;
+  --fill-main: #f0f0f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  --color-dark-main: #1a1a1a;
+  --color-dark-sub: #00000080;
+  }
+}
+
+/* Text ----------------- */
+.text-hype {
+  color: var(--color-main);
+}
+
+.text-hype-sub {
+  color: var(--color-sub);
+}
+
+.stroke-hype {
+    stroke: var(--fill-main);
+}
+  .fill-hype {
+    fill: var(--fill-main);
+}
+
+/* Fill ----------------- */
+
+/* ---------------------------------------------------------------------------------------------------------------------- */
+
+/* Checkbox */
+
+input[type="checkbox"] {
+  background: rgb(117, 117, 117);
+}
+
+
+/* Settings Sidebar */
+#default-sidebar {
+  height: 100%;
+  width: 220px; /* Starting width */
+}
+
+.handle {
+  background-color: hsla(0, 0%, 0%, 0.1);
+  width: 3px;
+  height: 118.5%;
+  cursor: ew-resize;
+  position: relative;
+  right: 0;
+  bottom: -4px;
+  z-index: 999;
+  &.handle:hover {
+    background-color: hsla(0, 0%, 100%, 0.1);
+  }
+}
+
+.sidebar-h {
+  height: 118.8%;
+}
+
+/* Settings Card */
+.set-card {
+    transition: none;
+    width: calc(100vw - 240px);
+    padding-right: 20px;
+}
+
+/* Input  */
+.api-input {
+  width: calc(100vw - 260px); /* 240px is wall */
+}
+
+.instructions-input {
+  width: calc(100vw - 260px); /* 240px is wall */
+  padding-right: 20px;
+  padding-bottom: 100px;
+}
+
+/* Shiny Text */
+
+:root {
+  --shiny-text: #ffffff80;
+}
+
+.shiny {
+  background-image: repeating-linear-gradient(120deg, var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), #fff, var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text), var(--shiny-text));
+  text-align: center;
+  background-size: 350% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 2s ease infinite;
+  animation-direction: normal;
+  color: transparent;
+}
+
+
+@keyframes rainbow {
+  0% {
+    background-position: 100% 25%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
+}
+
+/* Modal */
+
+.modal {
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+}
+
+#modal-content {
+  padding: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(50%);
+  width: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  z-index: 99;
+}
+
+.modal-visible {
+    display: block; /* or flex, etc., depending on your layout */
+    position: absolute;
+    opacity: 1; /* Fully visible modal */
+    visibility: visible; /* The modal can now be seen */
+}
+
+.modal-hidden {
+    display: none;
+}
+
+#modal-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}

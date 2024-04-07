@@ -1,14 +1,14 @@
 {
   "name": "hyperbar",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "The power of AI always at your fingertips.",
-  "main": "main.js",
+  "main": "./src/main/main.js",
   "scripts": {
     "test": "echo \"No tests specified\"",
     "start": "electron .",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
-    "css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "css": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
   },
   "build": {
     "appId": "cc.superlist.Hyperbar",

@@ -11,7 +11,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
     typingEffectEnd: (callback) => {
         ipcRenderer.on('typing-ended', (event) => callback());
     },
-    resizeWindow: (newHeight) => ipcRenderer.send('resize-window', newHeight),
+    resizeWindow: (windowId, newHeight) => ipcRenderer.send('resize-window', windowId, newHeight),
     hideWindow: () => ipcRenderer.send('hide-window'),
     openSettings: () => ipcRenderer.send('open-settings'),
     closeSettings: () => {
@@ -24,9 +24,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
         ipcRenderer.send('toggle-startup', shouldStartOnLogin);
     },
 
-    getLoginItemSettings: () => {
-        return ipcRenderer.invoke('get-login-settings');
-    },
+    getLoginItemSettings: () => { return ipcRenderer.invoke('get-login-settings'); },
+    getStartupPreference: () => ipcRenderer.invoke('get-startup-preference'),
     // -------------
 
     // API Key Input section starts here
@@ -35,6 +34,9 @@ contextBridge.exposeInMainWorld('electronAPI', {
     onApiKeyStatus: (callback) => { ipcRenderer.on('api-key-status', (event, ...args) => callback(...args)); },
 
     // ------------- API Key Input section ends here
+
+    saveInstructions: (instructions) => ipcRenderer.send('save-instructions', instructions),
+    getInstructions: () => ipcRenderer.invoke('get-instructions'),
 });
 
 
@@ -58,8 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
 // ----------------------------------------------------------------------
 // Open on startup
-const startupCheckbox = document.getElementById('startup-checkbox');
-
+const startupCheckbox = document.getElementById('StartupToggle');
 startupCheckbox.addEventListener('change', () => {
   const shouldStartOnLogin = startupCheckbox.checked;
   window.electronAPI.toggleStartup(shouldStartOnLogin);
