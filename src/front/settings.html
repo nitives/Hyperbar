@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,0,-25" />
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/settings.css">
     <title>Hyperbar</title>
@@ -53,7 +54,7 @@
              </aside>
              <div id="drag-handle" class="handle"></div>
         </div>
-        <div id="main" class="m-4 mt-8">
+        <div id="main" class="m-4 mt-xl">
             <h1 class="text-4xl font-medium text-hype ">Settings</h1>
             <br>
 
@@ -87,11 +88,44 @@
                     <h2 class="text-xl font-medium text-hype">Keyboard Shortcuts</h2>
                     <p class="text-hype-sub">View shortcuts</p>
                 </div>
-                <button onclick="openModal()" type="button" class="bg-main-button focus:ring-4 focus:ring-main font-medium rounded-lg text-sm px-5 py-2.5 focus:outline-none dark:focus:ring-neutral-400/35">Show</button>
+                <button onclick="openModal()" type="button" class="btn focus:ring-4 focus:ring-neutral-400/35">Show</button>
+            </div>
+
+            <div class="set-card py-6">
+                <h2 class="text-xl font-medium text-hype">Transparency Settings</h2>
+                <p class="pb-2 text-hype-sub">Toggle transparency for Hyperbar and Settings windows</p>
+                <button class="btn focus:ring-4 focus:ring-neutral-400/35">
+                    Click
+                </button>
+
+                <div class="sticker bg-main">
+                    <svg class="size-5 transition duration-75 fill-none"viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    </svg>
+                    <div>Hello</div>
+                </div>
+
+                <div class="bg-black outline outline-1 outline-white/5 rounded-xl shadow-md self-start px-2 py-2 mt-5">
+                    <div class="snackbar flex itmes-center mx-auto p-0" style="grid-column-gap: .618em; grid-row-gap: .618em;">
+                        <div class="success-bg rounded-xl  justify-center p-2 flex items-center">
+                            <div class="success-color material-symbols-rounded">check_circle</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="success-color font-bold mr-2">Success</div>
+                            <div class="font-normal mr-2">API Token has been set!</div>
+                            <div class="hidden" style="grid-column-gap: 1em; grid-row-gap: 1em;"><div class="w-[1px] bg-white/10"></div>
+                            <a href="#" class="font-bold text-main">Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            
+
             </div>
         </div>
-        <div id="apiSettings" class="m-4 mt-8 hidden">
-            <h1 class="text-4xl font-medium text-hype">HyperAI</h1>
+        <div id="apiSettings" class="m-4 mt-xl hidden">
+            <h1 class="text-4xl font-medium text-hype">Hyper<span class="font-extrabold">AI</span></h1>
             <br>
 
             <div class="set-card py-6 border-b-black/5 border-b-2">
@@ -123,20 +157,51 @@
             </div>
             
         </div>
-        <div id="aboutSettings" class="m-4 mt-8 hidden">
+        <div id="aboutSettings" class="m-4 mt-xl hidden">
             <h1 class="text-4xl font-medium text-hype">About</h1>
             <br>
 
             <div class="set-card py-6 border-b-black/5 border-b-2">
-                <h2 class="text-xl font-medium text-hype">Hyperbar</h2>
-                <div class="inline-flex justify-between w-full">
-                    <p class="pb-2 text-hype-sub">Customize the responses with your own custom prompts,<br> this could be sharing things about yourself or just to give instructions and rules</p>
+                <div alt="Info" class="inline-flex justify-between items-center w-full">
+                    <div alt="Info Sub 1" class="inline-flex items-center w-[-webkit-fill-available]">
+                        <img src="../assets/icon.png" class="size-28 mr-l">
+                        <div class="">
+                            <h1>Hyperbar</h1>
+                            <h2 class="opacity-50">Version 0.2.7</h2>
+                        </div>   
+                    </div>
+                    <div alt="Info Sub 2" class="flex w-fit">
+                        <p class="text-sm opacity-75 text-right">
+                            Hyperbar is a AI assistant that is one shortcut away always, this is a personal project that is currently just developed by me, I just wanted to find a way to learn JavaScript and I always wanted to make a desktop app, this is my 3rd JavaScript project ever so the quality is almost destined to be bad 
+                        </p>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <code class="font-mono">Hyperbar 0.2.7</code>
+                <div alt="Links" class="inline-flex justify-between items-center w-full mt-xl">
+                    <div alt="Links Socials">
+                        <h2>Socials</h2>
+                        <div class="items-center flex gap-2">
+                            <a href="https://github.com/nitives/Hyperbar" target="_blank" >
+                            <button class="btn-link bg-[#212121] hover:bg-[#2b2b2b] inline-flex"><img class="invert icon" src="../assets/social/github.svg">GitHub</button></a>
+                            <a href="https://x.com/nitives" target="_blank" >
+                            <button class="btn-link bg-black hover:bg-[hsl(0,0%,4%)] inline-flex"><img class="invert icon" src="../assets/social/x.svg">X</button></a>
+                            <a href="https://discord.gg/G8EGRdEnQu" target="_blank" >
+                            <button class="btn-link bg-[#5865f2] hover:bg-[#6c77f4] inline-flex"><img class="invert icon" src="../assets/social/discord.svg">Discord</button></a>
+                        </div>
+                    </div>
+                    <div alt="Links Sponsor" class="">
+                        <h2 class="">Sponsor</h2>
+                        <div class="items-center flex gap-2">
+                            <a href="https://github.com/nitives/Hyperbar" target="_blank" class="hidden">
+                            <button class="btn-link bg-[#212121] hover:bg-[#2b2b2b] inline-flex"><img class="invert icon" src="../assets/social/github.svg">GitHub</button></a>
+                            <a href="https://x.com/nitives" target="_blank" >
+                            <button class="btn-link bg-[#ffde05] hover:bg-[#ffe01a] text-black inline-flex"><img class="w-[32px]" src="../assets/social/buymeacoffee.svg">BuyMeACoffee</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div alt="Footer" class="text-center pt-[300px] ">
+                    <code class="font-mono">Made with 🖤 in the USA</code>
                     <a href="https://github.com/nitives/Hyperbar/blob/main/changelogs/2.2.7.md"></a>
                 </div>
-                
             </div>
             
         </div>
@@ -243,7 +308,7 @@
                 </div>
             </div>
         </div>
-    </>
+    </s>
     
     <script defer src="../main/renderer.js"></script>
     <script>

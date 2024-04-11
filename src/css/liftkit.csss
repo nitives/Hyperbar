@@ -1,0 +1,43 @@
+/* 
+LiftKit Styling Sheet
+https://liftkitui.webflow.io/
+*/
+
+/* Margin ----------------------------- */
+
+/* Margin Top */
+.mt-xs { margin-top: 0.235em; }
+.mt-s { margin-top: 0.345em; }
+.mt-m { margin-top: 0.785em; }
+.mt-l { margin-top: 1em; }
+.mt-xl { margin-top: 1.615em; }
+.mt-xxl { margin-top: 2.615em; }
+
+/* Margin Right */
+
+.mr-xs { margin-right: 0.235em; }
+.mr-s { margin-right: 0.345em; }
+.mr-m { margin-right: 0.785em; }
+.mr-l { margin-right: 1em; }
+.mr-xl { margin-right: 1.615em; }
+.mr-xxl { margin-right: 2.615em; }
+
+/* Margin Bottom */
+
+.mb-xs { margin-bottom: 0.235em; }
+.mb-s { margin-bottom: 0.345em; }
+.mb-m { margin-bottom: 0.785em; }
+.mb-l { margin-bottom: 1em; }
+.mb-xl { margin-bottom: 1.615em; }
+.mb-xxl { margin-bottom: 2.615em; }
+
+/* Margin Left */
+
+.ml-xs { margin-left: 0.235em; }
+.ml-s { margin-left: 0.345em; }
+.ml-m { margin-left: 0.785em; }
+.ml-l { margin-left: 1em; }
+.ml-xl { margin-left: 1.615em; }
+.ml-xxl { margin-left: 2.615em; }
+
+/* Padding ----------------------------- */

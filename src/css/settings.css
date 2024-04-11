@@ -1,39 +1,99 @@
-/* @media (prefers-color-scheme: dark) {
-    * {
-        color: rgb(228, 228, 228);
-    }
-    #api-input {
-    background-color: rgba(255, 255, 255, 0.2);
-    }
-  } */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1))
+:root {
+  --error-color: #ffb4ab;
+  --warning-color: #f7bd48;
+  --success-color: #76db9a;
+  --info-color: #b1c5ff;
+  --error-container: #93000a;
+  --warning-container: #5e4200;
+  --success-container: #00522c;
+  --info-container: #00419e;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
 }
 
-p, span {
-  filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1))
-}
+.error-color { color: var(--error-color) }
+.error-bg { background-color: var(--error-container) }
+.warning-color { color: var(--warning-color) }
+.warning-bg { background-color: var(--warning-container) }
+.info-color { color: var(--info-color) }
+.info-bg { background-color: var(--info-container) }
+.success-color { color: var(--success-color) }
+.success-bg { background-color: var(--success-container) }
+
+h1 { font-size: 4.235em; font-weight: 700; line-height: 1.129; letter-spacing: -.035em;}
+h2 { font-size: 2.618em; font-weight: 700; line-height: 1.272; letter-spacing: -0.022em;}
+h3 { font-size: 2.058em; font-weight: 600; line-height: 1.272; letter-spacing: -0.022em;}
+h4 { font-size: 1.618em; font-weight: 600; line-height: 1.272; letter-spacing: -0.02em;}
+h5 { font-size: 1.272em; font-weight: 600; line-height: 1.272; letter-spacing: -0.017em;}
+h6 { font-size: 1.129em; font-weight: 600; line-height: 1.272; letter-spacing: -0.014em;}
+h1,h2,h3,h4,h5,h6 { filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1)) }
+p, span { filter: drop-shadow(0px 3px 5px rgba(0, 0, 0, 0.1)) }
 
 @media (prefers-color-scheme: dark) {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.0))
-  }
-
-  p, span {
-    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.0))
-  }
+  h1,h2,h3,h4,h5,h6 { filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.0)) }
+  p, span { filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.0)) }
 }
+
+/* ----------------------------------------------- */
+
+.icon { width: 20px; }
+.badge { border-radius: .618em; justify-content: center; align-items: center; padding: .272em; display: flex; overflow: hidden; aspect-ratio: 1 / 1; width: fit-content; }
+.sticker {
+  grid-column-gap: .272em;
+  grid-row-gap: .272em;
+  box-shadow: 0 0 1px 0 #000;
+  letter-spacing: -.004em;
+  border-radius: 0.6250em;
+  justify-content: center;
+  align-items: center;
+  padding: .272em .618em;
+  font-size: .835em;
+  font-weight: 500;
+  line-height: 1.272;
+  display: flex;
+  overflow: hidden;
+  width: fit-content;
+}
+
+.btn {
+  grid-column-gap: .485867em;
+  grid-row-gap: .485867em;
+  background-color: var(--accent-color); &:hover { background-image: linear-gradient(rgb(0 0 0 / 35%) 0 0); };
+  white-space: normal;
+  word-break: keep-all;
+  border: 1px solid transparent;
+  border-radius: 0.6250em;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .485867em 1em;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-link {
+  grid-column-gap: .485867em;
+  grid-row-gap: .485867em;
+  white-space: normal;
+  word-break: keep-all;
+  border: 1px solid transparent;
+  border-radius: 0.6250em;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .485867em 1em;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ----------------------------------------------- */
+.snackbar { grid-column-gap: .618em; grid-row-gap: .618em; }
+.snackbar-action { grid-column-gap: 1em; grid-row-gap: 1em; }
+/* ---------------------------------------------------------------------------------------------- */
+
 
 #window-bar {
   /* position: absolute; */
@@ -43,6 +103,7 @@ p, span {
 #window-drag-tool {
   /* outline: 1px solid white; */
   -webkit-app-region: drag;
+  position: sticky;
   width: 100vw;
   height: 45px;
   background-color: transparent;

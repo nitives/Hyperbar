@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences, MenuItem } = require('electron');
+const { app, BrowserWindow, ipcMain, nativeImage, globalShortcut, Tray, Menu, systemPreferences, MenuItem, shell  } = require('electron');
 const path = require('path');
 const fs = require('fs');
 const axios = require('axios');
@@ -63,6 +63,10 @@ searchBarWindow.on('focus', () => {
     searchBarWindow.setBackgroundMaterial('acrylic'); // Re-enable the acrylic effect
 });
 }
+// ---------------------------------------------------------------------------------------
+// Toggle Transparency
+
+
 
 // ---------------------------------------------------------------------------------------
 
@@ -190,7 +194,6 @@ ipcMain.on('hide-window', () => {
   }
 });
 
-
 // ---------------------------------------------- Settings ----------------------------------------------
 // - Here you'll be able to click the icon / svg button to open the settings
 
@@ -257,6 +260,10 @@ function createsearchBarSettingsWindow() {
     searchBarSettingsWindow.webContents.send('set-accent-color', accentColor);
   });
 
+  searchBarSettingsWindow.webContents.setWindowOpenHandler((details) => {
+    shell.openExternal(details.url); // Open URL in user's browser.
+    return { action: "deny" }; // Prevent the app from opening the URL.
+  })
 }
 
 // --------------------------- API Key Input ---------------------------
