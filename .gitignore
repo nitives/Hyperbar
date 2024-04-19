@@ -8,6 +8,9 @@ package-lock.json
 # vscode
 .vscode
 
+# exe
+dist
+
 # more
 license.md
 openai.js
