@@ -1,6 +1,6 @@
 # Hyperbar
 
-<img src="./src/assets/preview.png" alt="Hyperbar Preview">
+<img src="./src/assets/preview1.png" alt="Hyperbar Preview">
 
 Hyperbar is an always-there desktop assistant designed to simplify your interactions with your computer. It provides a sleek and minimalistic interface that you can summon at any time with a simple keyboard shortcut.
 
