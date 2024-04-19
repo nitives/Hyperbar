@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'Marsden Text Condensed';
+    src: url('Marsden-Tx-CnBoldIt.eot');
+    src: local('Marsden Text Condensed Bold Italic'), local('Marsden-Tx-CnBoldIt'),
+        url('Marsden-Tx-CnBoldIt.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-CnBoldIt.woff2') format('woff2'),
+        url('Marsden-Tx-CnBoldIt.woff') format('woff'),
+        url('Marsden-Tx-CnBoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text';
+    src: url('Marsden-Tx-BoldIt.eot');
+    src: local('Marsden Text Bold Italic'), local('Marsden-Tx-BoldIt'),
+        url('Marsden-Tx-BoldIt.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-BoldIt.woff2') format('woff2'),
+        url('Marsden-Tx-BoldIt.woff') format('woff'),
+        url('Marsden-Tx-BoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text';
+    src: url('Marsden-Tx-Bold.eot');
+    src: local('Marsden Text Bold'), local('Marsden-Tx-Bold'),
+        url('Marsden-Tx-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-Bold.woff2') format('woff2'),
+        url('Marsden-Tx-Bold.woff') format('woff'),
+        url('Marsden-Tx-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Extended';
+    src: url('Marsden-Tx-ExBold.eot');
+    src: local('Marsden Text Extended Bold'), local('Marsden-Tx-ExBold'),
+        url('Marsden-Tx-ExBold.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-ExBold.woff2') format('woff2'),
+        url('Marsden-Tx-ExBold.woff') format('woff'),
+        url('Marsden-Tx-ExBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Extended';
+    src: url('Marsden-Tx-ExLightIt.eot');
+    src: local('Marsden Text Extended Light Italic'), local('Marsden-Tx-ExLightIt'),
+        url('Marsden-Tx-ExLightIt.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-ExLightIt.woff2') format('woff2'),
+        url('Marsden-Tx-ExLightIt.woff') format('woff'),
+        url('Marsden-Tx-ExLightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text';
+    src: url('Marsden-Tx-Italic.eot');
+    src: local('Marsden Text Italic'), local('Marsden-Tx-Italic'),
+        url('Marsden-Tx-Italic.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-Italic.woff2') format('woff2'),
+        url('Marsden-Tx-Italic.woff') format('woff'),
+        url('Marsden-Tx-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Condensed';
+    src: url('Marsden-Tx-CnRegular.eot');
+    src: local('Marsden Text Condensed'), local('Marsden-Tx-CnRegular'),
+        url('Marsden-Tx-CnRegular.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-CnRegular.woff2') format('woff2'),
+        url('Marsden-Tx-CnRegular.woff') format('woff'),
+        url('Marsden-Tx-CnRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text';
+    src: url('Marsden-Tx-Light.eot');
+    src: local('Marsden Text Light'), local('Marsden-Tx-Light'),
+        url('Marsden-Tx-Light.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-Light.woff2') format('woff2'),
+        url('Marsden-Tx-Light.woff') format('woff'),
+        url('Marsden-Tx-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Extended';
+    src: url('Marsden-Tx-ExRegular.eot');
+    src: local('Marsden Text Extended'), local('Marsden-Tx-ExRegular'),
+        url('Marsden-Tx-ExRegular.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-ExRegular.woff2') format('woff2'),
+        url('Marsden-Tx-ExRegular.woff') format('woff'),
+        url('Marsden-Tx-ExRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Condensed';
+    src: url('Marsden-Tx-CnBold.eot');
+    src: local('Marsden Text Condensed Bold'), local('Marsden-Tx-CnBold'),
+        url('Marsden-Tx-CnBold.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-CnBold.woff2') format('woff2'),
+        url('Marsden-Tx-CnBold.woff') format('woff'),
+        url('Marsden-Tx-CnBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Condensed';
+    src: url('Marsden-Tx-CnLight.eot');
+    src: local('Marsden Text Condensed Light'), local('Marsden-Tx-CnLight'),
+        url('Marsden-Tx-CnLight.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-CnLight.woff2') format('woff2'),
+        url('Marsden-Tx-CnLight.woff') format('woff'),
+        url('Marsden-Tx-CnLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Extended';
+    src: url('Marsden-Tx-ExBoldIt.eot');
+    src: local('Marsden Text Extended Bold Italic'), local('Marsden-Tx-ExBoldIt'),
+        url('Marsden-Tx-ExBoldIt.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-ExBoldIt.woff2') format('woff2'),
+        url('Marsden-Tx-ExBoldIt.woff') format('woff'),
+        url('Marsden-Tx-ExBoldIt.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Condensed';
+    src: url('Marsden-Tx-CnLightIt.eot');
+    src: local('Marsden Text Condensed Light Italic'), local('Marsden-Tx-CnLightIt'),
+        url('Marsden-Tx-CnLightIt.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-CnLightIt.woff2') format('woff2'),
+        url('Marsden-Tx-CnLightIt.woff') format('woff'),
+        url('Marsden-Tx-CnLightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Condensed';
+    src: url('Marsden-Tx-CnItalic.eot');
+    src: local('Marsden Text Condensed Italic'), local('Marsden-Tx-CnItalic'),
+        url('Marsden-Tx-CnItalic.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-CnItalic.woff2') format('woff2'),
+        url('Marsden-Tx-CnItalic.woff') format('woff'),
+        url('Marsden-Tx-CnItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Extended';
+    src: url('Marsden-Tx-ExItalic.eot');
+    src: local('Marsden Text Extended Italic'), local('Marsden-Tx-ExItalic'),
+        url('Marsden-Tx-ExItalic.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-ExItalic.woff2') format('woff2'),
+        url('Marsden-Tx-ExItalic.woff') format('woff'),
+        url('Marsden-Tx-ExItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text';
+    src: url('Marsden-Tx-Regular.eot');
+    src: local('Marsden Text'), local('Marsden-Tx-Regular'),
+        url('Marsden-Tx-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-Regular.woff2') format('woff2'),
+        url('Marsden-Tx-Regular.woff') format('woff'),
+        url('Marsden-Tx-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text Extended';
+    src: url('Marsden-Tx-ExLight.eot');
+    src: local('Marsden Text Extended Light'), local('Marsden-Tx-ExLight'),
+        url('Marsden-Tx-ExLight.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-ExLight.woff2') format('woff2'),
+        url('Marsden-Tx-ExLight.woff') format('woff'),
+        url('Marsden-Tx-ExLight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Marsden Text';
+    src: url('Marsden-Tx-LightIt.eot');
+    src: local('Marsden Text Light Italic'), local('Marsden-Tx-LightIt'),
+        url('Marsden-Tx-LightIt.eot?#iefix') format('embedded-opentype'),
+        url('Marsden-Tx-LightIt.woff2') format('woff2'),
+        url('Marsden-Tx-LightIt.woff') format('woff'),
+        url('Marsden-Tx-LightIt.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+.marsden-condensed {
+    font-family: 'Marsden Text Condensed', sans-serif;
+}

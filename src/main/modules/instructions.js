@@ -3,7 +3,7 @@ const path = require('path');
 const { app } = require('electron');
 
 const userDataPath = app.getPath('userData');
-const settingsPath = path.join(userDataPath, 'settings.json');
+const settingsPath = path.join(userDataPath, 'config.json');
 
 // Add the missing readSettings function if it doesn't exist elsewhere in your code
 function readSettings() {

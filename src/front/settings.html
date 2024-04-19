@@ -1,69 +1,106 @@
 <!DOCTYPE html>
 <html lang="en" class="hyper-font text-black bg-black/10 dark:bg-transparent">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline';">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,0,-25" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://unpkg.com;">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,700,0,-25" />
     <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="../assets/fonts/Marsden/marsden.css">
     <title>Hyperbar</title>
 </head>
 <div id="window-bar" class="flex">
     <div class="transition-none" id="window-drag-tool"></div>
     <button id="close-window" class="">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor" class="w-6 h-6">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"
+            class="w-6 h-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg> 
+        </svg>
     </button>
 </div>
+
 <body class="">
     <div class="settings-container flex">
         <div id="sidebar " class="inline-flex">
             <aside id="default-sidebar" class="top-0 left-0 z-40 w-56 transition-none" aria-label="Sidebar">
                 <div class="sidebar-h px-3 py-4 bg-black/10 transition-none">
                     <h1 class="text-4xl font-bold text-hype">Hyperbar</h1>
-                   <ul class="pt-4">
-                    <li>
-                        <a href="#" id="settingsLink" class="bg-transparent hover:bg-white/10 flex items-center p-2 rounded-lg group">
-                            <svg class="w-6 h-6 transition duration-75 stroke-hype" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-                            </svg>
-                           <span class="ms-3 font-light text-lg text-hype">Settings</span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" id="apiLink" class="bg-transparent hover:bg-white/10 flex items-center p-2 rounded-lg group">
-                            <svg class="w-6 h-6 p-[2px] transition duration-75 fill-hype" viewBox="0 0 24 24" role="img" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
-                            </svg>
-                            <span class="ms-3 font-light text-lg text-hype">HyperAI</span>
-                        </a>
-                     </li>
-                     <li>
-                        <a href="#" id="aboutLink" class="bg-transparent hover:bg-white/10 flex items-center p-2 rounded-lg group">
-                            <svg class="w-6 h-6 transition duration-75 fill-none"viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-                            </svg>
-                            <span class="ms-3 font-light text-lg text-hype">About</span>
-                        </a>
-                     </li>
-                   </ul>
+                    <ul class="pt-4">
+                        <li>
+                            <a href="#" id="settingsLink"
+                                class="bg-transparent hover:bg-white/10 flex items-center p-2 rounded-lg group">
+                                <svg class="w-6 h-6 transition duration-75 stroke-hype"
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                    stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                                </svg>
+                                <span class="ms-3 font-light text-lg text-hype">Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="apiLink"
+                                class="bg-transparent hover:bg-white/10 flex items-center p-2 rounded-lg group">
+                                <svg class="w-6 h-6 p-[2px] transition duration-75 fill-hype" viewBox="0 0 24 24"
+                                    role="img" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
+                                </svg>
+                                <span class="ms-3 font-light text-lg text-hype">HyperAI</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" id="aboutLink"
+                                class="bg-transparent hover:bg-white/10 flex items-center p-2 rounded-lg group">
+                                <svg class="stroke-hype w-6 h-6 transition duration-75 fill-none" viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                                </svg>
+                                <span class="ms-3 font-light text-lg text-hype">About</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-             </aside>
-             <div id="drag-handle" class="handle"></div>
+            </aside>
+            <div id="drag-handle" class="handle"></div>
         </div>
-        <div id="main" class="m-4 mt-xl">
-            <h1 class="text-4xl font-medium text-hype ">Settings</h1>
+        <div id="main" class="m-4 mt-xl w-[75%]">
+            <h1 class="text-4xl font-medium text-hype">Settings</h1>
             <br>
 
-            <div class="set-card py-6 border-b-black/5 border-b-2">
+            <div class="set-card py-6 border-b-black/5 border-b-2 text-hype">
                 <h2 class="text-xl font-medium text-hype">Theme</h2>
-                <p class="pb-2 text-hype-sub">Change the <span class="shiny font-medium">appearance</span> of Hyperbar - Placeholder</p>
+                <p class="pb-2 text-hype-sub">Change the <span class="shiny font-medium">appearance</span> of Hyperbar -
+                    <span class="text-hype-sub" id="theme-source">System</span>
                 <div class="gap-5 inline-flex">
-                    <div class="hover:scale-105 cursor-pointer w-72 h-40 bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2"></div>
-                    <div class="hover:scale-105 cursor-pointer w-72 h-40 bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2"></div>
+                    <div class="block">
+                        <a id="reset-to-system"
+                            class="border-[3px] border-transparent hover:border-main border-opacity-50 w-fit bg-transparent overflow-hidden flex items-center m-auto hover:scale-105 cursor-pointer rounded-[15px] shadow-lg">
+                            <img class="w-[245px]" src="../assets/System Group.png">
+                        </a>
+                        <p>System Default</p>
+                    </div>
+                    <div>
+                        <a id="light-mode"
+                            class="border-[3px] border-transparent hover:border-main border-opacity-50 w-fit bg-[#e6e6e6] overflow-hidden flex items-center m-auto hover:scale-105 cursor-pointer rounded-[15px] shadow-lg">
+                            <img class="w-60" src="../assets/Light Group.png">
+                        </a>
+                        <p>Light</p>
+                    </div>
+                    <div>
+                        <a id="dark-mode"
+                            class="border-[3px] border-transparent hover:border-main border-opacity-50 w-fit bg-black overflow-hidden flex items-center m-auto hover:scale-105 cursor-pointer rounded-[15px] shadow-lg ">
+                            <img class="w-60" src="../assets/Dark Group.png">
+                        </a>
+                        <p>Dark</p>
+                    </div>
                 </div>
             </div>
 
@@ -72,12 +109,15 @@
                     <h2 class="text-xl font-medium text-hype drop-shadow-sm">Startup behavior</h2>
                     <p class="text-hype-sub">Choose if Hyperbar launches when you start your device or not</p>
                 </div>
-                <label for="StartupToggle" class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                <label for="StartupToggle"
+                    class="flex items-center cursor-pointer select-none text-dark dark:text-white">
                     <div class="relative">
                         <input type="checkbox" id="StartupToggle" class="peer sr-only" />
-                        <div class="block h-8 rounded-full box bg-black/15 dark:bg-dark-2 w-14 peer-checked:bg-main"></div>
-                        <div
-                            class="absolute flex items-center justify-center w-6 h-6 transition bg-white rounded-full dot left-1 top-1 dark:bg-dark-5 peer-checked:translate-x-full peer-checked:dark:bg-white">
+                        <div class="block h-8 rounded-full box bg-white/10 dark:bg-dark-2 w-14 peer-checked:bg-main">
+                        </div>
+                        <div class="absolute flex items-center justify-center w-6 h-6 transition bg-white/50
+                            rounded-full dot left-1 top-1 dark:bg-white peer-checked:translate-x-full
+                            peer-checked:dark:bg-white peer-checked:bg-white/100">
                         </div>
                     </div>
                 </label>
@@ -88,10 +128,49 @@
                     <h2 class="text-xl font-medium text-hype">Keyboard Shortcuts</h2>
                     <p class="text-hype-sub">View shortcuts</p>
                 </div>
-                <button onclick="openModal()" type="button" class="btn focus:ring-4 focus:ring-neutral-400/35">Show</button>
+                <button onclick="openModal()" type="button"
+                    class="btn focus:ring-4 focus:ring-neutral-400/35">Show</button>
             </div>
 
-            <div class="set-card py-6">
+            <div class="set-card py-6 border-b-black/5 border-b-2">
+                <h2 class="text-xl font-medium text-hype">Custom Shortcuts</h2>
+                <p class="text-hype-sub pb-2">Set a custom shortcut to open Hyperbar</p>
+                <div class="flex flex-col">
+                    <div
+                        class="api-input size-auto bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2 inline-flex">
+                        <input type="text" id="openHyperbarShortcut" onkeydown="handleShortcutInput(event)"
+                            placeholder="Control+Alt+K"
+                            class="size-full p-3 p bg-transparent placeholder:text-white/30">
+                        <button id="saveShortcut" type="button"
+                            class="btn m-1 text-sm focus:ring-4 focus:ring-main focus:outline-none dark:focus:ring-neutral-400/35">Save</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="set-card py-6 border-b-black/5 border-b-2 inline-flex justify-between items-center">
+                <div>
+                    <h2 class="text-xl font-medium text-hype drop-shadow-sm">Always on Top</h2>
+                    <p class="text-hype-sub">Keep the search bar window always on top of other windows</p>
+                </div>
+                <label for="AlwaysOnTopToggle"
+                    class="flex items-center cursor-pointer select-none text-dark dark:text-white">
+                    <div class="relative">
+                        <input type="checkbox" id="AlwaysOnTopToggle" class="peer sr-only" />
+                        <div class="block h-8 rounded-full box bg-white/10 dark:bg-dark-2 w-14 peer-checked:bg-main">
+                        </div>
+                        <div class="absolute flex items-center justify-center w-6 h-6 transition bg-white/50
+                            rounded-full dot left-1 top-1 dark:bg-white peer-checked:translate-x-full
+                            peer-checked:dark:bg-white peer-checked:bg-white/100">
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            
+
+            
+
+            <div class="set-card py-6 hidden">
                 <h2 class="text-xl font-medium text-hype">Transparency Settings</h2>
                 <p class="pb-2 text-hype-sub">Toggle transparency for Hyperbar and Settings windows</p>
                 <button class="btn focus:ring-4 focus:ring-neutral-400/35">
@@ -99,28 +178,32 @@
                 </button>
 
                 <div class="sticker bg-main">
-                    <svg class="size-5 transition duration-75 fill-none"viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+                    <svg class="size-5 transition duration-75 fill-none" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
                     </svg>
                     <div>Hello</div>
                 </div>
 
                 <div class="bg-black outline outline-1 outline-white/5 rounded-xl shadow-md self-start px-2 py-2 mt-5">
-                    <div class="snackbar flex itmes-center mx-auto p-0" style="grid-column-gap: .618em; grid-row-gap: .618em;">
+                    <div class="snackbar flex itmes-center mx-auto p-0"
+                        style="grid-column-gap: .618em; grid-row-gap: .618em;">
                         <div class="success-bg rounded-xl  justify-center p-2 flex items-center">
                             <div class="success-color material-symbols-rounded">check_circle</div>
                         </div>
                         <div class="flex items-center">
                             <div class="success-color font-bold mr-2">Success</div>
                             <div class="font-normal mr-2">API Token has been set!</div>
-                            <div class="hidden" style="grid-column-gap: 1em; grid-row-gap: 1em;"><div class="w-[1px] bg-white/10"></div>
-                            <a href="#" class="font-bold text-main">Action</a>
+                            <div class="hidden" style="grid-column-gap: 1em; grid-row-gap: 1em;">
+                                <div class="w-[1px] bg-white/10"></div>
+                                <a href="#" class="font-bold text-main">Action</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-            
+
 
             </div>
         </div>
@@ -131,31 +214,60 @@
             <div class="set-card py-6 border-b-black/5 border-b-2">
                 <h2 class="text-xl font-medium text-hype">Instructions</h2>
                 <div class="inline-flex justify-between w-full">
-                    <p class="pb-2 text-hype-sub">Customize the responses with your own custom prompts,<br> this could be sharing things about yourself or just to give instructions and rules</p>
-                    <button id="saveInstructions" class="my-2 bg-main-button font-medium rounded-lg text-sm p-3">Save</button>
+                    <p class="pb-2 text-hype-sub">Customize the responses with your own custom prompts,<br> this could
+                        be sharing things about yourself or just to give instructions and rules</p>
+                    <button id="saveInstructions" class="btn my-2">Save</button>
                 </div>
-                
+
                 <div class="gap-5 inline-flex">
-                    <div id="instructAreaCon" class="size-auto bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2">
-                        <textarea name="textinput" rows="4" cols="50" wrap="soft" id="instructionsInput" style="resize: none;" 
-                        class="outline-none size-full instructions-input p-3 p bg-transparent max-w-full"></textarea>
+                    <div id="instructAreaCon"
+                        class="size-auto bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2">
+                        <textarea name="textinput" rows="4" cols="50" wrap="soft" id="instructionsInput"
+                            style="resize: none;"
+                            class="outline-none size-full instructions-input p-3 p bg-transparent max-w-full"></textarea>
                     </div>
                 </div>
-                <p class="pt-[0.5rem] transition-all duration-500 ease-in-out opacity-50" id="instructions-status"></p>
+                <p class="pt-[0.5rem] transition-all duration-500 ease-in-out opacity-50 hidden" id="instructions-status"></p>
             </div>
+
+            <div id="toaster" class="toaster hidden">
+                <div class="toaster-main">
+                    <div class="toaster-a">
+                        <div class="success-bg toaster-icon">
+                            <div class="success-color material-symbols-rounded">check_circle</div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="success-color font-bold mr-2">Success</div>
+                            <div class="font-normal mr-2">API Instructions has been set!</div>
+                            <div class="hidden" style="grid-column-gap: 1em; grid-row-gap: 1em;">
+                                <div class="w-[1px] bg-white/10"></div>
+                                <a href="#" class="font-bold text-main">Action</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="" type="button"
+                class="!hidden btn text-hype m-1 text-sm focus:ring-4 focus:ring-main focus:outline-none dark:focus:ring-neutral-400/35">Toast</button>
 
             <div class="set-card py-6 border-b-black/5 border-b-2">
                 <h2 class="text-xl font-medium text-hype">API Key</h2>
                 <p class="pb-2 text-hype">Enter your OpenAI API key to enable HyperAI</p>
                 <div class="gap-5 inline-flex">
-                    <div class="api-input size-auto bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2 inline-flex">
-                        <input id="api-input" placeholder="sk-xxxxxxxxxxx" class="size-full p-3 p bg-transparent placeholder:text-white/30">
-                        <button id="save-api-key" type="button" class="bg-main-button m-1 focus:ring-4 focus:ring-main font-medium rounded-lg text-sm px-3 py-2 focus:outline-none dark:focus:ring-neutral-400/35">Save</button>
+                    <div
+                        class="api-input size-auto bg-white/15 dark:bg-black/10 rounded-lg shadow-lg outline outline-white/30 dark:outline-black/10 outline-2 inline-flex">
+                        <input id="api-input" placeholder="sk-xxxxxxxxxxx"
+                            class="size-full p-3 p bg-transparent placeholder:text-white/30">
+                        <button id="save-api-key" type="button"
+                            class="btn m-1 text-sm focus:ring-4 focus:ring-main focus:outline-none dark:focus:ring-neutral-400/35">Save</button>
+
                     </div>
                 </div>
                 <p class="pt-[0.5rem]" id="api-key-status"></p>
+
             </div>
-            
+
         </div>
         <div id="aboutSettings" class="m-4 mt-xl hidden">
             <h1 class="text-4xl font-medium text-hype">About</h1>
@@ -167,12 +279,15 @@
                         <img src="../assets/icon.png" class="size-28 mr-l">
                         <div class="">
                             <h1>Hyperbar</h1>
-                            <h2 class="opacity-50">Version 0.2.7</h2>
-                        </div>   
+                            <h2 class="opacity-50">Version 0.2.8</h2>
+                        </div>
                     </div>
                     <div alt="Info Sub 2" class="flex w-fit">
                         <p class="text-sm opacity-75 text-right">
-                            Hyperbar is a AI assistant that is one shortcut away always, this is a personal project that is currently just developed by me, I just wanted to find a way to learn JavaScript and I always wanted to make a desktop app, this is my 3rd JavaScript project ever so the quality is almost destined to be bad 
+                            Hyperbar is a AI assistant that is one shortcut away always, this is a personal project that
+                            is currently just developed by me, I just wanted to find a way to learn JavaScript and I
+                            always wanted to make a desktop app, this is my 3rd JavaScript project ever so the quality
+                            is almost destined to be bad
                         </p>
                     </div>
                 </div>
@@ -180,21 +295,27 @@
                     <div alt="Links Socials">
                         <h2>Socials</h2>
                         <div class="items-center flex gap-2">
-                            <a href="https://github.com/nitives/Hyperbar" target="_blank" >
-                            <button class="btn-link bg-[#212121] hover:bg-[#2b2b2b] inline-flex"><img class="invert icon" src="../assets/social/github.svg">GitHub</button></a>
-                            <a href="https://x.com/nitives" target="_blank" >
-                            <button class="btn-link bg-black hover:bg-[hsl(0,0%,4%)] inline-flex"><img class="invert icon" src="../assets/social/x.svg">X</button></a>
-                            <a href="https://discord.gg/G8EGRdEnQu" target="_blank" >
-                            <button class="btn-link bg-[#5865f2] hover:bg-[#6c77f4] inline-flex"><img class="invert icon" src="../assets/social/discord.svg">Discord</button></a>
+                            <a href="https://github.com/nitives/Hyperbar" target="_blank">
+                                <button class="btn-link bg-[#212121] hover:bg-[#2b2b2b] inline-flex"><img
+                                        class="invert icon" src="../assets/social/github.svg">GitHub</button></a>
+                            <a href="https://x.com/nitves" target="_blank">
+                                <button class="btn-link bg-black hover:bg-[hsl(0,0%,4%)] inline-flex"><img
+                                        class="invert icon" src="../assets/social/x.svg">X</button></a>
+                            <a href="https://discord.gg/G8EGRdEnQu" target="_blank">
+                                <button class="btn-link bg-[#5865f2] hover:bg-[#6c77f4] inline-flex"><img
+                                        class="invert icon" src="../assets/social/discord.svg">Discord</button></a>
                         </div>
                     </div>
                     <div alt="Links Sponsor" class="">
                         <h2 class="">Sponsor</h2>
                         <div class="items-center flex gap-2">
                             <a href="https://github.com/nitives/Hyperbar" target="_blank" class="hidden">
-                            <button class="btn-link bg-[#212121] hover:bg-[#2b2b2b] inline-flex"><img class="invert icon" src="../assets/social/github.svg">GitHub</button></a>
-                            <a href="https://x.com/nitives" target="_blank" >
-                            <button style="grid-column-gap: 0 !important" class="btn-link gap-0 bg-[#ffde05] hover:bg-[#ffe01a] text-black inline-flex"><img class="w-[32px]" src="../assets/social/buymeacoffee.svg">Coffee</button></a>
+                                <button class="btn-link bg-[#212121] hover:bg-[#2b2b2b] inline-flex"><img
+                                        class="invert icon" src="../assets/social/github.svg">GitHub</button></a>
+                            <a href="https://www.buymeacoffee.com/nitves" target="_blank">
+                                <button style="grid-column-gap: 0 !important"
+                                    class="btn-link gap-0 bg-[#ffde05] hover:bg-[#ffe01a] text-black inline-flex"><img
+                                        class="w-[32px]" src="../assets/social/buymeacoffee.svg">Coffee</button></a>
                         </div>
                     </div>
                 </div>
@@ -203,25 +324,27 @@
                     <a href="https://github.com/nitives/Hyperbar/blob/main/changelogs/2.2.7.md"></a>
                 </div>
             </div>
-            
+
         </div>
     </div>
- 
-    <div id="settings-modal" class="modal p-4 absolute modal-hidden transition-none overflow-hidden" tabindex="-1" style="pointer-events: auto;">
+
+    <div id="settings-modal" class="modal p-4 absolute modal-hidden transition-none overflow-hidden" tabindex="-1"
+        style="pointer-events: auto;">
         <div id="modal-content" class="transition-none">
             <div class="justify-between flex">
                 <h2 class="text-2xl font-bold">Keyboard Shortcuts</h2>
-                <button onclick="closeModal()" class="p-3 bg-transparent hover:bg-black/20 rounded-lg" type="button" id="modal-close">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" class="lucide lucide-x">
+                <button onclick="closeModal()" class="p-3 bg-transparent hover:bg-black/20 rounded-lg" type="button"
+                    id="modal-close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-x">
                         <path d="M18 6 6 18"></path>
                         <path d="m6 6 12 12"></path>
                     </svg>
                 </button>
             </div>
-            <div class="my-2 flex flex-col items-center justify-center gap-2">
-                <div class="flex w-full gap-4 border-b border-b-black/5 pb-2">
+            <div class="marsden-condensed mt-2 flex flex-col items-center justify-center gap-2">
+                <div class="flex w-full gap-4 border-b border-b-black/5 pb-2"> <!-- 1 -->
                     <div class="w-1/2">
                         <h6 class="opacity-50">Keybind</h6>
                     </div>
@@ -229,167 +352,177 @@
                         <h6 class="opacity-50">Description</h6>
                     </div>
                 </div>
-                <div class="flex w-full gap-4 border-b border-b-black/15 pb-2">
-                    <div class="w-1/2 py-2">
-                        <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p>CTRL S</p>
-                        </div>
-                    </div>
+                <div class="keybind"> <!-- -->
                     <div class="w-full py-2">
                         <p>Open Settings</p>
                     </div>
-                </div>
-                <div class="flex w-full gap-4 border-b border-b-black/15 pb-2">
-                    <div class="w-1/2 py-2">
+                    <div class="py-2 pl-1">
                         <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p>Ctrl Q</p>
+                            class="marsden-condensed text-right inline-flex items-center justify-center px-2 py-2 text-xs font-bold">
+                            <p class="w-maxx py-1"><span class="key">Ctrl</span><span class="key ml-1">S</span></p>
                         </div>
                     </div>
+                </div> <!-- -->
+                <div class="keybind2"> <!-- -->
                     <div class="w-full py-2">
                         <p>Quit Hyperbar</p>
                     </div>
-                </div>
-                <div class="flex w-full gap-4 border-b border-b-black/15 pb-2">
-                    <div class="w-1/2 py-2">
+                    <div class="py-2">
                         <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p>Ctrl Alt K</p>
+                            class="marsden-condensed text-right inline-flex items-center justify-center rounded-md bg-white/0 px-2 py-2 text-xs font-bold">
+                            <p class="w-maxx py-1"><span class="key">Ctrl</span><span class="key ml-1">Q</span></p>
                         </div>
                     </div>
+                </div> <!-- -->
+                <div class="keybind"> <!-- -->
                     <div class="w-full py-2">
                         <p>Open Hyperbar when minimized</p>
                     </div>
-                </div>
-                <div class="flex w-full gap-4 border-b border-b-black/15 pb-2">
-                    <div class="w-1/2 py-2">
+                    <div class="py-2">
                         <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p>Ctrl ,</p>
+                            class="marsden-condensed text-right inline-flex items-center justify-center rounded-md bg-white/0 px-2 py-2 text-xs font-bold">
+                            <p class="w-maxx py-1"><span class="key">Ctrl</span><span class="key ml-1">Alt</span><span
+                                    class="key ml-1">K</span></p>
                         </div>
                     </div>
-                    <div class="w-full py-2">
-                        <p>Navigate to setting page</p>
-                    </div>
-                </div>
-                <div class="flex w-full gap-4 border-b border-b-black/15 pb-2">
-                    <div class="w-1/2 py-2">
-                        <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p> Enter</p>
-                        </div>
-                    </div>
+                </div> <!-- -->
+                <div class="keybind2"> <!-- -->
                     <div class="w-full py-2">
                         <p>Send a message</p>
                     </div>
-                </div>
-                <div class="flex w-full gap-4 border-b border-b-black/15 pb-2">
-                    <div class="w-1/2 py-2">
+                    <div class="py-2">
                         <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p>Arrow Up</p>
+                            class="marsden-condensed text-right inline-flex items-center justify-center rounded-md bg-white/0 px-2 py-2 text-xs font-bold">
+                            <p class="w-maxx py-1"><span class="key">Enter</span></p>
                         </div>
                     </div>
+                </div> <!-- -->
+                <div class="keybind"> <!-- -->
                     <div class="w-full py-2">
                         <p>Navigate to previous message sent (within input)</p>
                     </div>
-                </div>
-                <div class="flex w-full gap-4 pb-2">
-                    <div class="w-1/2 py-2">
+                    <div class="py-2">
                         <div
-                            class="inline-flex items-center justify-center rounded-md bg-white/10 px-2 py-2 text-xs font-bold">
-                            <p> Arrow Down</p>
+                            class="marsden-condensed text-right inline-flex items-center justify-center rounded-md bg-white/0 px-2 py-2 text-xs font-bold">
+                            <p class="w-maxx py-1"><span class="key icon material-symbols-rounded">arrow_upward</span>
+                            </p>
                         </div>
                     </div>
+                </div> <!-- -->
+                <div class="keybind2"> <!-- -->
                     <div class="w-full py-2">
                         <p>Navigate to next option message sent (within input)</p>
                     </div>
-                </div>
+                    <div class="py-2">
+                        <div
+                            class="marsden-condensed text-right inline-flex items-center justify-center rounded-md bg-white/0 px-2 py-2 text-xs font-bold">
+                            <p class="w-maxx py-1"><span class="key icon material-symbols-rounded">arrow_downward</span>
+                            </p>
+                        </div>
+                    </div>
+                </div> <!-- -->
+
             </div>
         </div>
-    </s>
-    
-    <script defer src="../main/renderer.js"></script>
-    <script>
-        // This function closes the modal
-        function openModal() {
-            var modal = document.getElementById('settings-modal');
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-            console.log("Modal opened")
-        }
-        function closeModal() {
-            var modal = document.getElementById('settings-modal');
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-            console.log("Modal closed");
-        }
-    
-        // This function is called when the modal background is clicked.
-        function onModalBackgroundClick(event) {
-            if (event.target.id === 'settings-modal') {
-                closeModal();
-            }
-        }
-        // This function prevents the click on the modal content from propagating to the modal background.
-        function onModalContentClick(event) {
-            event.stopPropagation();
-        }
-        document.addEventListener('DOMContentLoaded', (event) => {
-            var modal = document.getElementById('settings-modal');
-            var modalContent = document.getElementById('modal-content');
-            modal.addEventListener('click', onModalBackgroundClick);
-            modalContent.addEventListener('click', onModalContentClick);
-        });
-    </script>
-    <script>
-        // Get the main content area and the API settings area
-        var mainContent = document.getElementById('main');
-        var apiContent = document.getElementById('apiSettings');
-        var aboutContent = document.getElementById('aboutSettings');
-        
-        // Function to show the main settings
-        function showSettings() {
-            mainContent.classList.remove('hidden');
-            apiContent.classList.add('hidden');
-            aboutContent.classList.add('hidden');
-        }
-        
-        // Function to show the API settings
-        function showAPISettings() {
-            mainContent.classList.add('hidden');
-            apiContent.classList.remove('hidden');
-            aboutContent.classList.add('hidden');
+        </s>
 
-        }
-        
-        // Function to show the About section
-        function showAboutSection() {
-            mainContent.classList.add('hidden');
-            apiContent.classList.add('hidden');
-            aboutContent.classList.remove('hidden');
-        }
-        
-        // Add event listener for the Settings link
-        document.getElementById('settingsLink').addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent the default anchor behavior
-            showSettings(); // Call the function to show the main settings
-        });
-        
-        // Add event listener for the API link
-        document.getElementById('apiLink').addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent the default anchor behavior
-            showAPISettings(); // Call the function to show the API settings
-        });
-        // Add event listener for the API link
-        document.getElementById('aboutLink').addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent the default anchor behavior
-            showAboutSection(); // Call the function to show the About section
-        });
-        
-        // Call showSettings by default to display the settings content initially
-        showSettings();
-    </script>
+        <script defer src="../main/renderer.js"></script>
+        <script>
+            // This function closes the modal
+            function openModal() {
+                var modal = document.getElementById('settings-modal');
+                modal.classList.remove("modal-hidden");
+                modal.classList.add("modal-visible");
+                console.log("Modal opened")
+            }
+            function closeModal() {
+                var modal = document.getElementById('settings-modal');
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+                console.log("Modal closed");
+            }
+
+            // This function is called when the modal background is clicked.
+            function onModalBackgroundClick(event) {
+                if (event.target.id === 'settings-modal') {
+                    closeModal();
+                }
+            }
+            // This function prevents the click on the modal content from propagating to the modal background.
+            function onModalContentClick(event) {
+                event.stopPropagation();
+            }
+            document.addEventListener('DOMContentLoaded', (event) => {
+                var modal = document.getElementById('settings-modal');
+                var modalContent = document.getElementById('modal-content');
+                modal.addEventListener('click', onModalBackgroundClick);
+                modalContent.addEventListener('click', onModalContentClick);
+            });
+        </script>
+        <script>
+            // Get the main content area and the API settings area
+            var mainContent = document.getElementById('main');
+            var apiContent = document.getElementById('apiSettings');
+            var aboutContent = document.getElementById('aboutSettings');
+
+            // Function to show the main settings
+            function showSettings() {
+                mainContent.classList.remove('hidden');
+                apiContent.classList.add('hidden');
+                aboutContent.classList.add('hidden');
+            }
+
+            // Function to show the API settings
+            function showAPISettings() {
+                mainContent.classList.add('hidden');
+                apiContent.classList.remove('hidden');
+                aboutContent.classList.add('hidden');
+
+            }
+
+            // Function to show the About section
+            function showAboutSection() {
+                mainContent.classList.add('hidden');
+                apiContent.classList.add('hidden');
+                aboutContent.classList.remove('hidden');
+            }
+
+            // Add event listener for the Settings link
+            document.getElementById('settingsLink').addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default anchor behavior
+                showSettings(); // Call the function to show the main settings
+            });
+
+            // Add event listener for the API link
+            document.getElementById('apiLink').addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default anchor behavior
+                showAPISettings(); // Call the function to show the API settings
+            });
+            // Add event listener for the API link
+            document.getElementById('aboutLink').addEventListener('click', function (e) {
+                e.preventDefault(); // Prevent the default anchor behavior
+                showAboutSection(); // Call the function to show the About section
+            });
+
+            // Call showSettings by default to display the settings content initially
+            showSettings();
+        </script>
+        <script>
+            document.getElementById('saveShortcutButton').addEventListener('click', function () {
+                const shortcut = document.getElementById('shortcutInput').value;
+                window.electronAPI.saveShortcut('openHyperbar', shortcut)
+                    .then(isValid => {
+                        if (!isValid) {
+                            console.error('Invalid shortcut');
+                        } else {
+                            console.log('Shortcut saved successfully');
+                        }
+                    })
+                    .catch(err => {
+                        console.error('Error saving shortcut:', err);
+                    });
+            });
+        </script>
 </body>
+
 </html>

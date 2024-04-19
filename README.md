@@ -1,12 +1,12 @@
 # Hyperbar
 
-<img src="./src/assets/preview.png" alt="Hyperbar Preview" style="border-radius: 10px;">
+<img src="./src/assets/preview.png" alt="Hyperbar Preview">
 
 Hyperbar is an always-there desktop assistant designed to simplify your interactions with your computer. It provides a sleek and minimalistic interface that you can summon at any time with a simple keyboard shortcut.
 
 *This project is for me to learn JavaScript, I'm still in high school, so take this into consideration*
 
-## [What's new?](./changelogs/0.2.7.md) - [Previous Change Log](./changelogs/0.2.6.md)
+## [What's new?](./changelogs/0.2.8.md) - [Previous Change Log](./changelogs/0.2.7.md)
 
 ## Features
 
