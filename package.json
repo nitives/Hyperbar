@@ -1,6 +1,6 @@
 {
   "name": "hyperbar",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "The power of AI always at your fingertips.",
   "main": "./src/main/main.js",
   "scripts": {

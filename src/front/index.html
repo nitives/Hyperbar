@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en" class="hyper-font">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' 'unsafe-eval' 'sha256-BliFmpqYIWmsKH4lABEPCv/h5E6X4z+BKK5PJog=';">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline' https://unpkg.com;">
     <link rel="stylesheet" href="../css/output.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
     <title>Hyperbar</title>
 </head>
+
 <body>
     <div class="container-bg flex">
         <div id="hyper-center" class="hyperbar flex">
-            <input class="hyper-input flex" type="text" id="search-input" placeholder="Ask away...">
+            <input class="hyper-input flex placeholder:text-white/50" type="text" id="search-input"
+                placeholder="Ask away...">
             <button id="settings-btn" class="aspect-square">
-                <svg class="flex ai-icon" width="23" height="28" viewBox="0 0 23 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M13.1634 27.4707C13.525 27.4707 13.7962 27.208 13.8611 26.8346C14.7016 20.4941 15.5934 19.5308 21.8458 18.834C22.2309 18.7925 22.5 18.5075 22.5 18.1341C22.5 17.7746 22.2351 17.4917 21.8479 17.4439C15.5976 16.7218 14.7311 15.7859 13.8611 9.43578C13.792 9.06242 13.5229 8.8093 13.1634 8.8093C12.8039 8.8093 12.5327 9.06242 12.4774 9.43578C11.6348 15.7859 10.7355 16.7492 4.49055 17.4439C4.09587 17.4854 3.82892 17.7704 3.82892 18.1341C3.82892 18.5054 4.09376 18.7883 4.48845 18.834C10.7217 19.666 11.5668 20.4941 12.4774 26.8346C12.5348 27.208 12.806 27.4707 13.1634 27.4707ZM5.05986 14.4802C5.3015 14.4802 5.47704 14.311 5.5047 14.0769C5.92025 10.9733 6.01095 10.9627 9.24322 10.3543C9.46564 10.3149 9.63275 10.1511 9.63275 9.90945C9.63275 9.67531 9.46353 9.49977 9.239 9.47422C6.01728 9.02352 5.91064 8.92437 5.5047 5.76125C5.47704 5.51539 5.30361 5.34617 5.05986 5.34617C4.82361 5.34617 4.65017 5.51539 4.61502 5.77508C4.24212 8.87445 4.08744 8.87328 0.876502 9.47422C0.651972 9.51359 0.484863 9.67531 0.484863 9.90945C0.484863 10.1649 0.651972 10.3149 0.927596 10.3543C4.10244 10.8573 4.24212 10.9456 4.61502 14.0534C4.65017 14.311 4.82361 14.4802 5.05986 14.4802ZM10.7423 6.29328C10.9052 6.29328 11.002 6.18688 11.0276 6.0357C11.3643 4.1457 11.3334 4.07094 13.364 3.70133C13.5173 3.66406 13.6216 3.57149 13.6216 3.40649C13.6216 3.2511 13.5152 3.1468 13.3619 3.12125C11.3334 2.77274 11.3622 2.69375 11.0276 0.788983C11.002 0.635703 10.9052 0.529297 10.7423 0.529297C10.5773 0.529297 10.4826 0.635703 10.4571 0.793202C10.1266 2.67688 10.1533 2.75164 8.12056 3.12125C7.95556 3.14891 7.86298 3.2511 7.86298 3.40649C7.86298 3.57149 7.95556 3.66406 8.12689 3.70133C10.147 4.05828 10.1203 4.13727 10.4571 6.0336C10.4826 6.18688 10.5773 6.29328 10.7423 6.29328Z" fill="white"/>
-                </svg>
+                <lottie-player id="sparkle" class="flex ai-icon" src="../assets/ai_sparkle.json"
+                    background="transparent" speed="1" style="width: 30px; height: 30px" direction="1" mode="normal">
+                </lottie-player>
             </button>
             <div id="ai-response" style="display: none;">
                 <p id="ai-reply"></p>
             </div>
         </div>
-    
-        
     </div>
-    
     <script defer type="module" src="../main/renderer.js"></script>
+    <script>
+        LottieInteractivity.create({
+            player: "#sparkle",
+            mode: "cursor",
+            actions: [
+                {
+                    position: { x: [0, 1], y: [0, 1] },
+                    type: "hover",
+                    forceFlag: false,
+                    reset: false,
+                },
+            ]
+        });
+    </script>
 </body>
+
 </html>
